@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+  <Tracking>
+    <ImageTarget name="KTH" size="1.000000 1.000000" />
+    <ImageTarget name="Yellow" size="1.000000 1.000000" />
+    <ImageTarget name="Blue" size="1.000000 1.000000" />
+    <ImageTarget name="Red" size="1.000000 1.000000" />
+    <ImageTarget name="Green" size="1.000000 1.000000" />
+  </Tracking>
+</QCARConfig>
