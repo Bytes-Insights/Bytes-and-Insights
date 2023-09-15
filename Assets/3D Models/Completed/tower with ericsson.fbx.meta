@@ -8,57 +8,57 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Mat_1002-B
-    second: {fileID: 2100000, guid: 4b25ecfb06a5ee34585ab58ef6230b9a, type: 2}
+    second: {fileID: 2100000, guid: 6f7362616e64cd84aa370e06b50da4fe, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Mat_2002-B
-    second: {fileID: 2100000, guid: de163cb8f71465747b31941d50c133cd, type: 2}
+    second: {fileID: 2100000, guid: 0b6e93c03a2412845b8bedb2c4ddc814, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Mat_4502-B
-    second: {fileID: 2100000, guid: 6d46a5ab22397ea488ff4e27af5491b7, type: 2}
+    second: {fileID: 2100000, guid: 15ae2edc44977dc4ba3a8bfd138bddfa, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Mat_Contact_Antenna
-    second: {fileID: 2100000, guid: 552e13efc07158f468e3a8da84e09303, type: 2}
+    second: {fileID: 2100000, guid: 2e91eaab7741e9247aca24d7b7afd441, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Mat_Contact_Steel
-    second: {fileID: 2100000, guid: a5af80b3bd15e1a41bd613d4a2995646, type: 2}
+    second: {fileID: 2100000, guid: 9bb78b614099e8e48b9ed1460ab29ae9, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Mat_Contact_copper
-    second: {fileID: 2100000, guid: cda7747b40d227f4fb0152521e9d04f4, type: 2}
+    second: {fileID: 2100000, guid: 11212e62f86b59143952862069f4c1a8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Mat_Label_AIR_6468_6488
-    second: {fileID: 2100000, guid: ab1722b7f91de084ea339d7130f3452c, type: 2}
+    second: {fileID: 2100000, guid: 68db5d93b443b87478a87043aa60e65a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Mat_MattBlack
-    second: {fileID: 2100000, guid: 164040b33403b414493382afef874bbe, type: 2}
+    second: {fileID: 2100000, guid: 5bf34adb4a1272e449ec639abd01ad6f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Mat_MattRed
-    second: {fileID: 2100000, guid: 2273feacb295388429a50b1a565e9a74, type: 2}
+    second: {fileID: 2100000, guid: 151f17eca01ef454cb113f6b8f1a8168, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Mat_Screws
-    second: {fileID: 2100000, guid: 72896c055bc661543b4339471abd2abc, type: 2}
+    second: {fileID: 2100000, guid: a8c17e9fcd811da40bc99b11d92ad81c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Material.002
-    second: {fileID: 2100000, guid: 33a10733c9b787544928d28d08c6229c, type: 2}
+    second: {fileID: 2100000, guid: 8ae3582905c27ab43a9dbd0f9116a660, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
