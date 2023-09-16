@@ -8,6 +8,10 @@ public class btnLetsGo : MonoBehaviour
     public GameObject firstTextBox;
     public GameObject secondTextBox;
 
+    public GameObject thirdTextBox;
+
+    public GameObject fourthTextBox;
+
     List<GameObject> boxes = new List<GameObject>();
     int index = 0;
 
@@ -17,6 +21,10 @@ public class btnLetsGo : MonoBehaviour
 
         boxes.Add(firstTextBox);
         boxes.Add(secondTextBox);
+        boxes.Add(thirdTextBox);
+        boxes.Add(fourthTextBox);
+
+        //Debug.Log(boxes.Count);
         
     }
 
@@ -31,23 +39,30 @@ public class btnLetsGo : MonoBehaviour
         if (index < boxes.Count) {
         
             GameObject currentBox = boxes[index];
-            GameObject nextBox = boxes[index+1];
-
-            index++;
 
             if (currentBox.activeInHierarchy == true) {
 
                 currentBox.SetActive(false);
 
-                if (nextBox.activeInHierarchy == false) {
-                    nextBox.SetActive(true);
+                if (index != boxes.Count - 1) {
+
+                    GameObject nextBox = boxes[index + 1];
+
+                    if (nextBox.activeInHierarchy == false) {
+                        nextBox.SetActive(true);
+                    }
+
                 }
 
             } else {
+
                 currentBox.SetActive(true);
+                
             }
 
-        }
+            index++;
+
+        } 
 
     }
 }
