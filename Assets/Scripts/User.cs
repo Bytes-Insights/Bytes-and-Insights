@@ -8,11 +8,19 @@ public class User : MonoBehaviour
     private GameObject[] potentialTargets;
     private LineRenderer renderer;
 
+    //TextBox Controller variables
+    private GameObject canvas;
+    private textboxController textboxController;
+
     void Start()
     {
         potentialTargets = GameObject.FindGameObjectsWithTag("Site");
        //  range = GetComponent<Range>();
         renderer = GetComponent<LineRenderer>();
+
+        //TextBox Controller variables definition
+        canvas = GameObject.Find("Canvas");
+        textboxController = (textboxController) canvas.GetComponent(typeof(textboxController));
     }
 
     void Update()
@@ -45,6 +53,8 @@ public class User : MonoBehaviour
             renderer.enabled = true;
             renderer.SetPosition(0, transform.position);
             renderer.SetPosition(1, eligibleTarget.transform.position);
+            textboxController.textboxBeamformingIntroduction();
+
         }
         else
         {
