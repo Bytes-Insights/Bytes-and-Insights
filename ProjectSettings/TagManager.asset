@@ -8,6 +8,7 @@ TagManager:
   - Site
   - Canvas
   - DictionaryPanel
+  - AntennaReferencePoint
   layers:
   - Default
   - TransparentFX

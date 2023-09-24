@@ -2114,7 +2114,7 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: Blue
+  mTrackableName: KTH
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/Bytes-Insights.xml
   mAspectRatio: 1
@@ -2156,7 +2156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 324679672}
   mHiddenRoot: {fileID: 0}
-  mTargetName: Blue
+  mTargetName: KTH
   mDatasetName: Vuforia/Bytes-Insights.xml
   mCastedBehaviour: {fileID: 324679672}
   mMeshFilter: {fileID: 0}
@@ -2597,6 +2597,37 @@ Transform:
   - {fileID: 733376684}
   m_Father: {fileID: 1432379988}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!1 &385425558
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 385425559}
+  m_Layer: 0
+  m_Name: AntennaReferencePoint
+  m_TagString: AntennaReferencePoint
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &385425559
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385425558}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.704, z: 0.191}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1424228443}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &391938425
 GameObject:
   m_ObjectHideFlags: 0
@@ -7040,7 +7071,7 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: Yellow
+  mTrackableName: Blue
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/Bytes-Insights.xml
   mAspectRatio: 1
@@ -7083,7 +7114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 1312540313}
   mHiddenRoot: {fileID: 0}
-  mTargetName: Yellow
+  mTargetName: Blue
   mDatasetName: Vuforia/Bytes-Insights.xml
   mCastedBehaviour: {fileID: 1312540313}
   mMeshFilter: {fileID: 0}
@@ -7731,6 +7762,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 552954204}
+  - {fileID: 385425559}
   m_Father: {fileID: 1437372951}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1424228444
@@ -8109,7 +8141,7 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: KTH
+  mTrackableName: Yellow
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/Bytes-Insights.xml
   mAspectRatio: 1
@@ -8165,7 +8197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 1437372950}
   mHiddenRoot: {fileID: 0}
-  mTargetName: KTH
+  mTargetName: Yellow
   mDatasetName: Vuforia/Bytes-Insights.xml
   mCastedBehaviour: {fileID: 1437372950}
   mMeshFilter: {fileID: 0}
@@ -8513,6 +8545,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2001617685}
   - {fileID: 409204571}
   m_Father: {fileID: 1610594383}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9907,6 +9940,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1950757804}
   - {fileID: 988136195}
   m_Father: {fileID: 525623307}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10474,6 +10508,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1950757803
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1950757804}
+  m_Layer: 0
+  m_Name: AntennaReferencePoint
+  m_TagString: AntennaReferencePoint
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1950757804
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950757803}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.704, z: 0.191}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1876689943}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1952899819
 GameObject:
   m_ObjectHideFlags: 0
@@ -10880,6 +10945,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1996664356}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2001617684
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2001617685}
+  m_Layer: 0
+  m_Name: AntennaReferencePoint
+  m_TagString: AntennaReferencePoint
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2001617685
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001617684}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.704, z: 0.191}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1467736105}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2023208434
 GameObject:
   m_ObjectHideFlags: 0

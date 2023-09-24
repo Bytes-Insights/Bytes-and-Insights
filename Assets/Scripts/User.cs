@@ -57,6 +57,7 @@ public class User : MonoBehaviour
         }
 
         Site eligibleTarget = null;
+        Transform eligibleTargetTransform = null;
         double lastDist = double.MaxValue;
 
         foreach (GameObject potentialTarget in potentialTargets)
@@ -69,7 +70,10 @@ public class User : MonoBehaviour
             float siteMaxRange = site.GetRange().range;
             float requiredRange = siteMaxRange; //Mathf.Min(usrMaxRange, siteMaxRange);
 
-            double dist = (potentialTarget.transform.position - this.transform.position).magnitude;
+            GameObject referencePoint = FindChildWithTag(potentialTarget.transform, "AntennaReferencePoint");
+            Transform targetTransform = referencePoint ? referencePoint.transform : potentialTarget.transform;
+
+            double dist = (targetTransform.position - this.transform.position).magnitude;
             if (dist > requiredRange) continue;
 
             if (eligibleTarget == null ||
@@ -77,6 +81,7 @@ public class User : MonoBehaviour
                 (eligibleTarget.networkVersion == site.networkVersion && dist < lastDist))
             {
                 eligibleTarget = site;
+                eligibleTargetTransform = targetTransform;
                 lastDist = dist;
             }
         }
@@ -86,7 +91,7 @@ public class User : MonoBehaviour
         {
             renderer.enabled = true;
             renderer.SetPosition(0, transform.position);
-            renderer.SetPosition(1, eligibleTarget.transform.position);
+            renderer.SetPosition(1, eligibleTargetTransform.position);
             textboxController.textboxBeamformingIntroduction();
 
         }
@@ -94,5 +99,16 @@ public class User : MonoBehaviour
         {
             renderer.enabled = false;
         }
+    }
+    GameObject FindChildWithTag(Transform parent, string tag)
+    {
+        foreach (Transform child in parent)
+        {
+            if (child.CompareTag(tag))
+            {
+                return child.gameObject;
+            }
+        }
+        return null;
     }
 }
