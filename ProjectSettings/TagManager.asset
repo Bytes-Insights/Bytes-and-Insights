@@ -9,6 +9,7 @@ TagManager:
   - Canvas
   - DictionaryPanel
   - AntennaReferencePoint
+  - HologramController
   layers:
   - Default
   - TransparentFX
