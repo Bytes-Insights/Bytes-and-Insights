@@ -4,63 +4,75 @@ using UnityEngine;
 
 public class InfoButtonBehaviour : MonoBehaviour
 {
-    private Camera arCamera;
-    private Transform parent;
-    public LayerMask targetLayer;
+    private bool isOpen;
+    private GameObject ARCamera;
+    private LayerMask infoButtonLayer;
 
+    //HUDController
+    private GameObject HUDController;
+
+    //InfoPieces
+    private GameObject infoPieces;
+
+    //Sprite Variables
+    private string unclickedSpritePath = "2D Images/infoButton_unclicked";
+    private string clickedSpritePath = "2D Images/infoButton_clicked";
+    private Sprite unclickedSprite;
+    private Sprite clickedSprite;
     private SpriteRenderer spriteRenderer;
-    public Sprite questionmark;
-    public Sprite exit;
-    private bool open;
-    private float radius;
 
-    public GameObject information;
-
-    // Start is called before the first frame update
     void Start()
     {
-        radius = 0f;
-        arCamera = GameObject.Find("ARCamera").GetComponent<Camera>();
-        parent = transform.parent;
+        //Initialization of private variables
+        isOpen = false;
+        ARCamera = GameObject.Find("ARCamera");
+        infoButtonLayer = LayerMask.GetMask("InfoButtons");
+
+        //HUD Controller
+        HUDController = GameObject.Find("HUDController");
+
+        //InfoPieces 
+        infoPieces = transform.parent.Find("InfoPieces").gameObject;
+
+        //Load Sprites & Renderer
+        unclickedSprite = Resources.Load<Sprite>(unclickedSpritePath);
+        clickedSprite = Resources.Load<Sprite>(clickedSpritePath);
         spriteRenderer = GetComponent<SpriteRenderer>();
-        open = false; 
-        spriteRenderer.sprite = questionmark;
+
+        //Set Active on Start
+        gameObject.SetActive(true);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // Face camera
-            Vector3 relativePosition = arCamera.gameObject.transform.right * radius;
+        //Look at Camera
+        transform.LookAt(ARCamera.transform);
 
-            // Set the position of the child object
-            transform.position = parent.position + relativePosition;
-
-            // Ensure the object faces the AR camera
-            transform.LookAt(arCamera.gameObject.transform);
-
-            transform.position = new Vector3(transform.position.x, parent.position.y + 2.2f, transform.position.z);
-            transform.Rotate(Vector3.up, 180f);
-
-        // If tapped
-        if (Input.GetMouseButtonDown(0))
+        // Check for touch or click input
+        if (Input.GetMouseButtonDown(0)) // 0 represents the left mouse button (or touch input)
         {
-            // Create a ray from the mouse position
-            Ray ray = arCamera.ScreenPointToRay(Input.mousePosition);
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            // Perform a raycast to see if it hits this object
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity, targetLayer) && hit.collider.gameObject == transform.gameObject)
+            // Perform a raycast to detect the object
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, infoButtonLayer))
             {
-                //Change sprite depending on open or not
-                if(open){
-                    spriteRenderer.sprite = questionmark;
-                }else{
-                    spriteRenderer.sprite = exit;
+                // Check if the ray hit the GameObject this script is attached to
+                if (hit.collider.gameObject == gameObject)
+                {
+                    onTouch();
                 }
-                open = !open;
-                information.SetActive(open);
             }
         }
+    }
+
+    private void onTouch(){
+        if(isOpen)
+            spriteRenderer.sprite = unclickedSprite;
+        else
+            spriteRenderer.sprite = clickedSprite;
+        isOpen = !isOpen;
+        infoPieces.SetActive(isOpen);
+        HUDController.GetComponent<HUDController>().controlHUD(gameObject, isOpen);
     }
 }

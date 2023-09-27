@@ -7,9 +7,11 @@ TagManager:
   - Range
   - Site
   - Canvas
-  - DictionaryPanel
   - AntennaReferencePoint
   - HologramController
+  - SiteTarget
+  - InfoButton
+  - InfoPieces
   layers:
   - Default
   - TransparentFX
@@ -18,9 +20,9 @@ TagManager:
   - Water
   - UI
   - InfoButtons
-  - ObjectInformation
+  - InfoPieces
   - GlowCamera
-  - 
+  - HUDVisibleLayer
   - 
   - 
   - 
