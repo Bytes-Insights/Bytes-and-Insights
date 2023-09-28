@@ -3,6 +3,7 @@ using UnityEngine;
 public class HologramController : MonoBehaviour
 {
     private GameObject[] holograms;
+    private bool active = false;
 
     private void Start()
     {
@@ -16,6 +17,10 @@ public class HologramController : MonoBehaviour
         }
     }
 
+    public bool isHologramActive()
+    {
+        return active;
+    }
 
     public void ActivateHologram(int index)
     {
@@ -25,6 +30,8 @@ public class HologramController : MonoBehaviour
             return;
         }
 
+        active = true;
+
         for (int i = 0; i < holograms.Length; i++)
         {
             holograms[i].SetActive(i == index);
@@ -33,6 +40,7 @@ public class HologramController : MonoBehaviour
 
     public void HideAllHolograms()
     {
+        active = false;
         for (int i = 0; i < holograms.Length; i++)
         {
             holograms[i].SetActive(false);

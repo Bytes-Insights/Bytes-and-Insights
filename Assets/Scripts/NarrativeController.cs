@@ -11,6 +11,7 @@ public class NarrativeController : MonoBehaviour
     private bool sitesExplained;
     private bool FiveGExplained;
     private bool FourGExplained;
+    private bool AIR6488Explained;
 
     public void ExplainBeamforming()
     {
@@ -25,8 +26,9 @@ public class NarrativeController : MonoBehaviour
 
     public void ExplainSites()
     {
-        sitesExplained = true;
-        explanation.ShowExplanation("Sites", "Places where technological equipment, such as antennas and radios, are located, are called 'sites'.");
+        ExplainAIR6488();
+        //sitesExplained = true;
+        //explanation.ShowExplanation("Sites", "Places where technological equipment, such as antennas and radios, are located, are called 'sites'.");
     }
 
     public bool WereSitesExplained()
@@ -56,4 +58,15 @@ public class NarrativeController : MonoBehaviour
     {
         return FourGExplained;
     }
+
+    public void ExplainAIR6488()
+    {
+        AIR6488Explained = true;
+        explanation.ShowExplanation("AIR6488", "4G is a fast wireless technology that allows us to use our phones and devices for internet, streaming, gaming, and downloading. It's not as fast as 5G, but it's still much faster than older networks like 3G.", 1);
+    }
+    public bool WasAIR6488Explained()
+    {
+        return AIR6488Explained;
+    }
+
 }

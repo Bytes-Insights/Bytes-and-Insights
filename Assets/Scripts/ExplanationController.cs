@@ -7,11 +7,13 @@ public class ExplanationController : MonoBehaviour
 {
     public GameObject explanationCanvas;
     public UIDocument explanationDocument;
+    public HologramController hologramController;
 
     public delegate void ClosedEventHandler(string closed);
     public event ClosedEventHandler OnClosed;
 
     private string currentConcept;
+    private int currentHologram = -1;
 
     void Start()
     {
@@ -20,9 +22,15 @@ public class ExplanationController : MonoBehaviour
 
     public void ShowExplanation(string conceptTitle, string description)
     {
+        ShowExplanation(conceptTitle, description, -1);
+    }
+
+    public void ShowExplanation(string conceptTitle, string description, int hologramId)
+    {
         explanationCanvas.SetActive(true);
 
         currentConcept = conceptTitle;
+        currentHologram = hologramId;
 
         VisualElement root = explanationDocument.GetComponent<UIDocument>().rootVisualElement;
 
@@ -34,6 +42,12 @@ public class ExplanationController : MonoBehaviour
 
         Label explanation = root.Q<Label>("Explanation");
         explanation.text = description;
+
+        if (hologramId != -1) {
+            Button hologramButton = root.Q<Button>("ShowHologramButton");
+            hologramButton.visible = true;
+            hologramButton.clicked += ShowHologram;
+        }
     }
 
     public void Hide()
@@ -42,10 +56,22 @@ public class ExplanationController : MonoBehaviour
 
         string closedConcept = currentConcept;
         currentConcept = null;
+        currentHologram = -1;
         
         if (OnClosed != null)
         {
             OnClosed(closedConcept);
+        }
+    }
+
+    public void ShowHologram()
+    {
+        if (hologramController.isHologramActive())
+        {
+            hologramController.HideAllHolograms();
+        } else
+        {
+            hologramController.ActivateHologram(currentHologram);
         }
     }
 }
