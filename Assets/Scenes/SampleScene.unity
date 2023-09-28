@@ -2344,7 +2344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 5
-  opacity: 0.5
+  opacity: 0.2
   range_material: {fileID: 2100000, guid: bcbba32fd7d03d042b4161fb0e9004cb, type: 2}
 --- !u!1 &1426410796
 GameObject:
@@ -2735,7 +2735,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 7.5
-  opacity: 0.5
+  opacity: 0.2
   range_material: {fileID: 2100000, guid: bcbba32fd7d03d042b4161fb0e9004cb, type: 2}
 --- !u!1 &1508366836
 GameObject:
@@ -3522,7 +3522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 5
-  opacity: 0.5
+  opacity: 0.2
   range_material: {fileID: 2100000, guid: bcbba32fd7d03d042b4161fb0e9004cb, type: 2}
 --- !u!1 &1946090772
 GameObject:
