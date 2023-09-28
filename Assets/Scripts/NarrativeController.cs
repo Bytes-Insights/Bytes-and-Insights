@@ -12,6 +12,7 @@ public class NarrativeController : MonoBehaviour
     private bool FiveGExplained;
     private bool FourGExplained;
     private bool AIR6488Explained;
+    private bool Radio4415Explained;
 
     public void ExplainBeamforming()
     {
@@ -65,9 +66,22 @@ public class NarrativeController : MonoBehaviour
 "It utilizes technologies such as 'Massive MIMO' (Multiple Input, Multiple Output) and 'beamforming', allowing for improved coverage, capacity and user experience (by supporting higher data rates and lower latencies).\n" +
 "It has a compact design with average dimensions of about 80cm x 50cm x 25cm and 45 kg. The unit can work under a wide range of environmental operation conditions (such as temperatures from -40 to +55C and relative humidity from 2% to 100%).", 1);
     }
+
     public bool WasAIR6488Explained()
     {
         return AIR6488Explained;
     }
 
+    public void ExplainRadio4415()
+    {
+        Radio4415Explained = true;
+        explanation.ShowExplanation("Radio 4415", "This is a radio unit for 4G networks. Different from AIR models, this unit needs a separate antenna to operate.\n\n" +
+"It supports MIMO (Multiple Input Multiple Output), a technology that helps in increasing the capacity and coverage of the network, thus enhancing user experiences.\n\n" +
+"It has small dimensions and weighs only 17kg.", 1);
+    }
+
+    public bool WasRadio4415Explained()
+    {
+        return Radio4415Explained;
+    }
 }
