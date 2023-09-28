@@ -77,4 +77,11 @@ public class InfoButtonBehaviour : MonoBehaviour
         infoPieces.SetActive(isOpen);
         HUDController.GetComponent<HUDController>().controlHUD(gameObject, isOpen);
     }
+
+    public void close(){
+        spriteRenderer.sprite = unclickedSprite;
+        isOpen = false;
+        infoPieces.SetActive(isOpen);
+        HUDController.GetComponent<HUDController>().controlHUD(gameObject, isOpen);
+    }
 }
