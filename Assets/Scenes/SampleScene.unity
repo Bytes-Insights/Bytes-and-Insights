@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1976,13 +1976,13 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: KTH
+  mTrackableName: City
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/Bytes-Insights.xml
-  mAspectRatio: 1
+  mAspectRatio: 0.7406392
   mImageTargetType: 0
-  mWidth: 1
-  mHeight: 1
+  mWidth: 5
+  mHeight: 3.703196
   mRuntimeTexture: {fileID: 0}
   mMotionHint: 1
   mTrackingOptimization: 0
@@ -2019,7 +2019,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 324679672}
   mHiddenRoot: {fileID: 0}
-  mTargetName: KTH
+  mTargetName: City
   mDatasetName: Vuforia/Bytes-Insights.xml
   mCastedBehaviour: {fileID: 324679672}
   mMeshFilter: {fileID: 0}
@@ -2985,13 +2985,13 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: Green
+  mTrackableName: site1-2m
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/Bytes-Insights.xml
-  mAspectRatio: 1
+  mAspectRatio: 1.0214845
   mImageTargetType: 0
-  mWidth: 1
-  mHeight: 1
+  mWidth: 2
+  mHeight: 2.042969
   mRuntimeTexture: {fileID: 0}
   mMotionHint: 1
   mTrackingOptimization: 0
@@ -3030,7 +3030,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 525623306}
   mHiddenRoot: {fileID: 0}
-  mTargetName: Green
+  mTargetName: site1-2m
   mDatasetName: Vuforia/Bytes-Insights.xml
   mCastedBehaviour: {fileID: 525623306}
   mMeshFilter: {fileID: 0}
@@ -3546,6 +3546,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6054d58be68e74dfc90a903dedf16fbd, type: 2}
+    - target: {fileID: -7029948723529949830, guid: a42ed4c5017f97f469acec621f4ad205, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -447275898630060098, guid: a42ed4c5017f97f469acec621f4ad205, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.44
@@ -6773,13 +6777,13 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: Blue
+  mTrackableName: phone
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/Bytes-Insights.xml
-  mAspectRatio: 1
+  mAspectRatio: 1.0573015
   mImageTargetType: 0
-  mWidth: 1
-  mHeight: 1
+  mWidth: 2
+  mHeight: 2.114603
   mRuntimeTexture: {fileID: 0}
   mMotionHint: 1
   mTrackingOptimization: 0
@@ -6816,7 +6820,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 1312540313}
   mHiddenRoot: {fileID: 0}
-  mTargetName: Blue
+  mTargetName: phone
   mDatasetName: Vuforia/Bytes-Insights.xml
   mCastedBehaviour: {fileID: 1312540313}
   mMeshFilter: {fileID: 0}
@@ -7778,13 +7782,13 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: Yellow
+  mTrackableName: site3-2m
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/Bytes-Insights.xml
   mAspectRatio: 1
   mImageTargetType: 0
-  mWidth: 1
-  mHeight: 1
+  mWidth: 2
+  mHeight: 2
   mRuntimeTexture: {fileID: 0}
   mMotionHint: 1
   mTrackingOptimization: 0
@@ -7835,7 +7839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 1437372950}
   mHiddenRoot: {fileID: 0}
-  mTargetName: Yellow
+  mTargetName: site3-2m
   mDatasetName: Vuforia/Bytes-Insights.xml
   mCastedBehaviour: {fileID: 1437372950}
   mMeshFilter: {fileID: 0}
@@ -8595,13 +8599,13 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: Red
+  mTrackableName: site2-2m
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/Bytes-Insights.xml
   mAspectRatio: 1
   mImageTargetType: 0
-  mWidth: 1
-  mHeight: 1
+  mWidth: 2
+  mHeight: 2
   mRuntimeTexture: {fileID: 0}
   mMotionHint: 1
   mTrackingOptimization: 0
@@ -8640,7 +8644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 1610594382}
   mHiddenRoot: {fileID: 0}
-  mTargetName: Red
+  mTargetName: site2-2m
   mDatasetName: Vuforia/Bytes-Insights.xml
   mCastedBehaviour: {fileID: 1610594382}
   mMeshFilter: {fileID: 0}

@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig>
   <Tracking>
+    <ImageTarget name="site3-2m" size="2.000000 2.000000" />
+    <ImageTarget name="site2-2m" size="2.000000 2.000000" />
+    <ImageTarget name="site1-2m" size="2.000000 2.042969" />
+    <ImageTarget name="phone" size="2.000000 2.114603" />
+    <ImageTarget name="genart-paren" size="3.000000 3.000000" />
+    <ImageTarget name="genart-contrast" size="3.000000 3.000000" />
+    <ImageTarget name="genart" size="3.000000 3.064453" />
+    <ImageTarget name="City" size="5.000000 3.703196" />
     <ImageTarget name="KTH" size="1.000000 1.000000" />
     <ImageTarget name="Yellow" size="1.000000 1.000000" />
     <ImageTarget name="Blue" size="1.000000 1.000000" />
