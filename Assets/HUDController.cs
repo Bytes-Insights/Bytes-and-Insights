@@ -46,7 +46,14 @@ public class HUDController : MonoBehaviour
     
     void Update()
     {
-        
+        updateFOV();
+    }
+
+    void updateFOV(){
+        GameObject HUDObjects = GameObject.Find("ARCamera").transform.Find("HUDObjects").gameObject;
+        Camera ARCamera = GameObject.Find("ARCamera").GetComponent<Camera>();
+        Camera HUDCamera = HUDObjects.transform.Find("HUDCamera").gameObject.GetComponent<Camera>();
+        HUDCamera.fieldOfView = ARCamera.fieldOfView;
     }
 
     private void changeSiteLayer(LayerMask layer, GameObject parent){
@@ -78,9 +85,6 @@ public class HUDController : MonoBehaviour
         if(willOpen){
             //Except the clicked button
             infoButton.SetActive(true);
-
-            //Change HUDCamera FOV to parent camera
-            HUDCamera.fieldOfView = ARCamera.fieldOfView;
 
             //Place site in Visible Layer
             this.changeSiteLayer(HUDLayer, infoButton.transform.parent.gameObject);

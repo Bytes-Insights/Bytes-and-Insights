@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,11 +11,6 @@ public class NarrativeController : MonoBehaviour
     private bool sitesExplained;
     private bool FiveGExplained;
     private bool FourGExplained;
-
-    private void Start()
-    {
-        ExplainSites();
-    }
 
     public void ExplainBeamforming()
     {
