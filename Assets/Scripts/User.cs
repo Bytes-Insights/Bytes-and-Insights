@@ -9,10 +9,6 @@ public class User : MonoBehaviour
     private GameObject[] potentialTargets;
     private LineRenderer renderer;
 
-    //TextBox Controller variables
-    private GameObject canvas;
-    private textboxController textboxController;
-
     private Vuforia.ImageTargetBehaviour imageTarget;
     private bool tracked = false;
 
@@ -24,8 +20,6 @@ public class User : MonoBehaviour
         renderer.enabled = false;
 
         //TextBox Controller variables definition
-        canvas = GameObject.Find("Canvas");
-        textboxController = (textboxController) canvas.GetComponent(typeof(textboxController));
 
         imageTarget = gameObject.GetComponentInParent<Vuforia.ImageTargetBehaviour>();
 
@@ -92,8 +86,6 @@ public class User : MonoBehaviour
             renderer.enabled = true;
             renderer.SetPosition(0, transform.position);
             renderer.SetPosition(1, eligibleTargetTransform.position);
-            textboxController.textboxBeamformingIntroduction();
-
         }
         else
         {
