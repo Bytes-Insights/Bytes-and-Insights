@@ -7,6 +7,7 @@ public class NarrativeController : MonoBehaviour
 {
     public ExplanationController explanation;
 
+    private bool introExplained;
     private bool beamformingExplained;
     private bool sitesExplained;
     private bool FiveGExplained;
@@ -14,6 +15,18 @@ public class NarrativeController : MonoBehaviour
     private bool AIR6488Explained;
     private bool Radio4415Explained;
 
+    public void ExplainIntro()
+    {
+        
+        if (!introExplained) {
+
+            explanation.ShowExplanation("Welcome to our city!", "The other codes represent 'sites' (antennas with radios) and an user (the laptop). Try placing them around the city and pointing at them with the camera to see what happens. Feel free to experiment and move them around.");
+
+            introExplained = true;
+            
+        }
+
+    }
     public void ExplainBeamforming()
     {
         beamformingExplained = true;
@@ -54,6 +67,10 @@ public class NarrativeController : MonoBehaviour
         explanation.ShowExplanation("4G Connection", "4G is a fast wireless technology that allows us to use our phones and devices for internet, streaming, gaming, and downloading. It's not as fast as 5G, but it's still much faster than older networks like 3G.");
     }
 
+    public bool WasIntroExplained()
+    {
+        return introExplained;
+    }
     public bool Was4GExplained()
     {
         return FourGExplained;
@@ -84,4 +101,5 @@ public class NarrativeController : MonoBehaviour
     {
         return Radio4415Explained;
     }
+
 }
