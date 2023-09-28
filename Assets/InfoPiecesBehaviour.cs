@@ -8,10 +8,10 @@ public class InfoPiecesBehaviour : MonoBehaviour
     private GameObject ARCamera;
 
     //Enumerations
-    public enum NetworkGeneration
+    public enum SiteModel
     {
-        _4G,
-        _5G
+        AIR_6488,
+        Radio_4415
     }
 
     public enum TowerTypeEnumeration
@@ -20,7 +20,7 @@ public class InfoPiecesBehaviour : MonoBehaviour
     }
     
     //Public attr selection
-    public NetworkGeneration selectedNetwork;
+    public SiteModel selectedSite;
     public TowerTypeEnumeration selectedType;
 
     void Start()

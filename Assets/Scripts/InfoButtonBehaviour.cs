@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InfoButtonBehaviour : MonoBehaviour
 {
+    public float radius;
     private bool isOpen;
     private GameObject ARCamera;
     private LayerMask infoButtonLayer;
@@ -45,8 +46,9 @@ public class InfoButtonBehaviour : MonoBehaviour
 
     void Update()
     {
-        //Look at Camera
+        transform.position = transform.parent.position;
         transform.LookAt(ARCamera.transform);
+        transform.position = transform.position + transform.forward * radius;
 
         // Check for touch or click input
         if (Input.GetMouseButtonDown(0)) // 0 represents the left mouse button (or touch input)

@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class ConnectivityInfoPieceBehaviour : MonoBehaviour
+public class ModelInfoPieceBehaviour : MonoBehaviour
 {
     private GameObject ARCamera;
     private NarrativeController NarrativeController;
     private LayerMask infoPieceLayer;
     private InfoPiecesBehaviour infoPiecesBehaviour;
-    private InfoPiecesBehaviour.NetworkGeneration selectedNetwork;
+    private InfoPiecesBehaviour.SiteModel selectedSite;
 
     // Start is called before the first frame update
     void Start()
@@ -20,9 +20,9 @@ public class ConnectivityInfoPieceBehaviour : MonoBehaviour
         
         //Get selected network
         infoPiecesBehaviour = transform.parent.GetComponent<InfoPiecesBehaviour>();
-        selectedNetwork = infoPiecesBehaviour.selectedNetwork;
+        selectedSite = infoPiecesBehaviour.selectedSite;
         //Insert type
-        transform.Find("Text").GetComponent<TextMeshPro>().text = selectedNetwork.ToString().Replace("_", "");
+        transform.Find("Text").GetComponent<TextMeshPro>().text = selectedSite.ToString().Replace("_", "");
     }
 
     // Update is called once per frame
@@ -42,10 +42,10 @@ public class ConnectivityInfoPieceBehaviour : MonoBehaviour
                 if (hit.collider.gameObject == gameObject)
                 {
                     
-                    if(selectedNetwork == InfoPiecesBehaviour.NetworkGeneration._5G)
-                        NarrativeController.Explain5G();
-                    else if(selectedNetwork == InfoPiecesBehaviour.NetworkGeneration._4G)
-                        NarrativeController.Explain4G();
+                    if(selectedSite == InfoPiecesBehaviour.SiteModel.AIR_6488)
+                        NarrativeController.ExplainAIR6488();
+                    else if(selectedSite == InfoPiecesBehaviour.SiteModel.Radio_4415)
+                        NarrativeController.ExplainRadio4415();
 
                 }
             }

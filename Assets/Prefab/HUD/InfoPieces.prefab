@@ -258,7 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ecefa6bce5628342b66e5d44c51ce51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedNetwork: 1
+  selectedSite: 0
   selectedType: 0
 --- !u!1 &1018414324741597406
 GameObject:
@@ -270,9 +270,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2559299319511130048}
   - component: {fileID: 4985533028249480760}
-  - component: {fileID: 3648579846520226012}
+  - component: {fileID: 2450037542240199387}
   m_Layer: 7
-  m_Name: InfoPiece - Site Connectivity
+  m_Name: InfoPiece - Site Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -317,7 +317,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 31.65511, y: 7.2089224, z: 1}
   m_Center: {x: 2.763, y: 3.1044617, z: 0}
---- !u!114 &3648579846520226012
+--- !u!114 &2450037542240199387
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -432,7 +432,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -17.65, y: 4.37}
+  m_AnchoredPosition: {x: -11.26, y: 4.37}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &8482988890668799087
@@ -839,7 +839,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Connectivity:'
+  m_text: 'Model:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
