@@ -22,7 +22,6 @@ public class PhoneAnimation : MonoBehaviour
         VisualElement phone = root.Q<VisualElement>("Phone");
 
         runningTime += Time.deltaTime;
-        
         if( runningTime  * 1000 > animationDuration ){
             Debug.Log("Triggered");
             runningTime = 0.0f;

@@ -19,6 +19,7 @@ public class RotationController : MonoBehaviour
     {
         if (Screen.orientation == ScreenOrientation.Portrait || Screen.orientation == ScreenOrientation.PortraitUpsideDown)
         {
+            Debug.Log(tracker);
             if(!tracker){
                 canvas.SetActive(true);
                 explanationController.Hide();
