@@ -5,6 +5,9 @@ public class OnCollision : MonoBehaviour
 {
     public GameObject building;
     private Color colour;
+	private Color oldColor;
+	private Color newColor;
+	private Material currentMat;
     private float opacity;
     private float factor;
     private bool colliding;
@@ -13,6 +16,7 @@ public class OnCollision : MonoBehaviour
     {
         colliding = false;
         colour = building.GetComponent<MeshRenderer>().material.color;
+		currentMat = gameObject.GetComponent<Renderer>().material;
         Debug.Log("Building identified");
         opacity = colour.a;
     }
@@ -22,13 +26,17 @@ public class OnCollision : MonoBehaviour
         if (colliding)
         {
             factor = 0;
-            colour.a = (float)(opacity * factor);
+            oldColor = currentMat .color;
+        	newColor = new Color(oldColor.r, oldColor.g, oldColor.b, factor);
+        	currentMat .SetColor("_Color", newColor);
             Debug.Log("Decrease opacity");
         }
         else
         {
             factor = 1;
-            colour.a = (float)(opacity * factor);
+            oldColor = currentMat .color;
+        	newColor = new Color(oldColor.r, oldColor.g, oldColor.b, factor);
+        	currentMat .SetColor("_Color", newColor);
             Debug.Log("Increase opacity");
         }
     }
