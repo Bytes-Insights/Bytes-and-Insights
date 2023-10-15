@@ -12,23 +12,24 @@ public class OnCollision : MonoBehaviour
 	
 	void Start()
 	{
+		colliding=false;
 		colour=building.GetComponent<MeshRenderer>().material.color;
-		System.Console.WriteLine("building identified");
+		Debug.Log("building identified");
 		opacity=colour.a;
 	}
 	
     void Update()
     {
-        if(colliding==true & factor!=0.3)
+        if(colliding==true)
 		{
-				factor-=0.1;
-				opacity=opacity*factor;
-				System.Console.WriteLine("decrease opacity");
+				factor=0;
+				colour.a=opacity*factor;
+				Debug.Log("decrease opacity");
         }
-		else if(colliding==false & factor!=1){
-				factor+=0.1;
-				opacity=opacity*factor;
-			System.Console.WriteLine("increase opacity");
+		else if(colliding==false){
+				factor=1;
+				colour.a= Convert.ToSingle(opacity*factor);
+			Debug.Log("increase opacity");
 		}
 		
     }
@@ -36,12 +37,12 @@ public class OnCollision : MonoBehaviour
 	private void OnTriggerEnter(Collider other)
 	    {
 	        colliding=true;
-			System.Console.WriteLine("collided");
+			Debug.Log("collided");
 	    }
 		
 	private void OnTriggerExit(Collider other)
 		    {
 		        colliding=false;
-				System.Console.WriteLine("separated");
+				Debug.Log("separated");
 		    }
 }
