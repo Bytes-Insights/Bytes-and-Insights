@@ -17,7 +17,7 @@ public class OnCollision : MonoBehaviour
         colliding = false;
         colour = building.GetComponent<MeshRenderer>().material.color;
 		currentMat = gameObject.GetComponent<Renderer>().material;
-        Debug.Log("Building identified");
+        //Debug.Log("Building identified");
         opacity = colour.a;
     }
 
@@ -29,7 +29,7 @@ public class OnCollision : MonoBehaviour
             oldColor = currentMat .color;
         	newColor = new Color(oldColor.r, oldColor.g, oldColor.b, factor);
         	currentMat .SetColor("_Color", newColor);
-            Debug.Log("Decrease opacity");
+            //Debug.Log("Decrease opacity");
         }
         else
         {
@@ -37,19 +37,19 @@ public class OnCollision : MonoBehaviour
             oldColor = currentMat .color;
         	newColor = new Color(oldColor.r, oldColor.g, oldColor.b, factor);
         	currentMat .SetColor("_Color", newColor);
-            Debug.Log("Increase opacity");
+            //Debug.Log("Increase opacity");
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         colliding = true;
-        Debug.Log("Collided");
+        //Debug.Log("Collided");
     }
 
     private void OnTriggerExit(Collider other)
     {
         colliding = false;
-        Debug.Log("Separated");
+        //Debug.Log("Separated");
     }
 }

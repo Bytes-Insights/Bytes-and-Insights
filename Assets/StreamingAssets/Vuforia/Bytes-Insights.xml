@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig>
   <Tracking>
+    <ImageTarget name="Map2-more" size="15.000000 21.248930" />
+    <ImageTarget name="map-bw" size="15.000000 21.240074" />
+    <ImageTarget name="Map2-A1" size="15.000000 21.248930" />
+    <ImageTarget name="map" size="1.000000 1.417183" />
     <ImageTarget name="site3-2m" size="2.000000 2.000000" />
     <ImageTarget name="site2-2m" size="2.000000 2.000000" />
     <ImageTarget name="site1-2m" size="2.000000 2.042969" />
