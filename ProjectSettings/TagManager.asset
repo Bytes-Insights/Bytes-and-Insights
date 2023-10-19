@@ -12,6 +12,8 @@ TagManager:
   - SiteTarget
   - InfoButton
   - InfoPieces
+  - Layer_Connection
+  - Layer_Ranges
   layers:
   - Default
   - TransparentFX
