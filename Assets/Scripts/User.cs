@@ -11,6 +11,7 @@ public class User : MonoBehaviour
 
     private Vuforia.ImageTargetBehaviour imageTarget;
     private bool tracked = false;
+    private LayerController controllerScript;
 
     void Start()
     {
@@ -27,6 +28,9 @@ public class User : MonoBehaviour
         {
             imageTarget.OnTargetStatusChanged += OnTargetStatusChanged;
         }
+
+        GameObject LayerController = GameObject.Find("LayerController");
+        controllerScript = LayerController.GetComponent<LayerController>();
     }
 
     void OnTargetStatusChanged(ObserverBehaviour observerbehavour, TargetStatus status)
@@ -81,7 +85,7 @@ public class User : MonoBehaviour
         }
 
 
-        if (eligibleTarget != null)
+        if (eligibleTarget != null && controllerScript.getConnectionLayerStatus())
         {
             renderer.enabled = true;
             renderer.SetPosition(0, transform.position);

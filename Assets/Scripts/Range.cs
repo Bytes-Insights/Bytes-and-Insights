@@ -33,7 +33,7 @@ public class Range : MonoBehaviour
         sphere.GetComponent<Renderer>().material.color = tempcolor;
 
         /*Naming & Tagging*/
-        sphere.tag = "Range";
+        sphere.tag = "Layer_Ranges";
     }
 
     GameObject FindChildWithTag(Transform parent, string tag)
