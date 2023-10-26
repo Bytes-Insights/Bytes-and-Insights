@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Range : MonoBehaviour
+public class Range : Observer
 {
     //private
     private Color tempcolor;
@@ -47,4 +47,6 @@ public class Range : MonoBehaviour
         }
         return null;
     }
+
+    public override void OnNotify(bool isActive){}
 }
