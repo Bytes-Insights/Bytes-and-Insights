@@ -5,19 +5,16 @@ using UnityEngine.Splines;
 
 public class SplineMovement : MonoBehaviour
 {
+    public SplineStore splineStore;
     public float speed = 0.01f;
     public bool loop = true;
     
-    private Spline spline;
     private float splineAlpha = 0f;
-
-    private void Start()
-    {
-        spline = transform.parent.GetComponent<SplineContainer>().Spline;
-    }
 
     private void Update()
     {
+        Spline spline = splineStore.GetSpline();
+
         if (spline != null)
         {
             if (splineAlpha <= 1f)
