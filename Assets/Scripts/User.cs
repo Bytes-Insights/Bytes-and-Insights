@@ -9,7 +9,7 @@ public class User : MonoBehaviour
     private GameObject[] potentialTargets;
     private LineRenderer renderer;
 
-    private Vuforia.ImageTargetBehaviour imageTarget;
+    public  Vuforia.ImageTargetBehaviour imageTarget;
     private bool tracked = false;
     private LayerController controllerScript;
 
@@ -22,7 +22,10 @@ public class User : MonoBehaviour
 
         //TextBox Controller variables definition
 
-        imageTarget = gameObject.GetComponentInParent<Vuforia.ImageTargetBehaviour>();
+        if (!imageTarget)
+        {
+            imageTarget = gameObject.GetComponentInParent<Vuforia.ImageTargetBehaviour>();
+        }
 
         if (imageTarget)
         {

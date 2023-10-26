@@ -55,7 +55,7 @@ public class SplineMovement : MonoBehaviour
 
                 Quaternion targetRotation = Quaternion.LookRotation(tangent, Vector3.up);
 
-                transform.rotation = targetRotation;
+                transform.localRotation = targetRotation;
 
                 splineAlpha += speed * Time.deltaTime;
             }
