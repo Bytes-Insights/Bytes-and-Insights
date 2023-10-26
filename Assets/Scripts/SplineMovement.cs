@@ -5,7 +5,7 @@ using UnityEngine.Splines;
 
 public class SplineMovement : MonoBehaviour
 {
-    public SplineStore splineStore;
+    public SplineContainer container;
     public float speed = 0.01f;
     public bool loop = true;
     
@@ -13,7 +13,7 @@ public class SplineMovement : MonoBehaviour
 
     private void Update()
     {
-        Spline spline = splineStore.GetSpline();
+        Spline spline = container.Spline;
 
         if (spline != null)
         {
