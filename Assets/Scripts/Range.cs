@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class Range : Observer
 {
+
+    //external
+    private bool layer_isActive;
+
     //private
     private Color tempcolor;
+    private GameObject sphere;
 
     //public
     public float range;
@@ -15,13 +20,14 @@ public class Range : Observer
     // Start is called before the first frame update
     void Start()
     {
-        GameObject referencePoint = FindChildWithTag(transform, "AntennaReferencePoint");
-        Transform parent = referencePoint ? referencePoint.transform : transform;
+        layer_isActive = false;
+
+        Transform target_transform = transform.parent.transform.parent;
 
         //Create sphere of range given the range, opacity and material selected
-        GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        sphere.transform.parent = parent;
-        sphere.transform.position = parent.position;
+        sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+        sphere.transform.parent = target_transform;
+        sphere.transform.position = target_transform.position;
         //Apparently, localScale scales an object based on the parent object. Can't add the ranges as children because then we lose track of scale units (A 4.0f for an antenna is not the same for its range)
         sphere.transform.localScale = new Vector3(range * 2, range * 2, range * 2);
         sphere.GetComponent<Renderer>().material = range_material;
@@ -34,19 +40,12 @@ public class Range : Observer
 
         /*Naming & Tagging*/
         sphere.tag = "Layer_Ranges";
+        sphere.SetActive(layer_isActive);
     }
 
-    GameObject FindChildWithTag(Transform parent, string tag)
-    {
-        foreach (Transform child in parent)
-        {
-            if (child.CompareTag(tag))
-            {
-                return child.gameObject;
-            }
-        }
-        return null;
+    public override void OnNotify(bool isActive){
+        Debug.Log("HEY!");
+        layer_isActive = isActive;
+        sphere.SetActive(layer_isActive);
     }
-
-    public override void OnNotify(bool isActive){}
 }

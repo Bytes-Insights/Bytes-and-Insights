@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Vuforia;
 
 public abstract class Subject : MonoBehaviour
 {
