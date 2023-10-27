@@ -44,7 +44,6 @@ public class Range : Observer
     }
 
     public override void OnNotify(bool isActive){
-        Debug.Log("HEY!");
         layer_isActive = isActive;
         sphere.SetActive(layer_isActive);
     }
