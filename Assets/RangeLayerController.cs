@@ -18,7 +18,6 @@ public class RangeLayerController : Subject
     }
 
     public void OnButtonPressed(VirtualButtonBehaviour vb){
-        Debug.Log("ENTRA");
         setIsActive(!isActive);
     }
 
