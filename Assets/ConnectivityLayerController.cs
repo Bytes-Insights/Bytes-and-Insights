@@ -7,12 +7,12 @@ public class ConnectivityLayerController : Subject
 {
     public bool isActive = false;
     public VirtualButtonBehaviour Vb;
-    public string subject_name = "ConnectivityLayerController";
 
     void Start()
     {
+        setSubjectName("ConnectivityLayerController");
         //Push all sites as observers
-        StoreObserversWithTag("Site_ConnectivityController");
+        StoreObserversWithTag("User");
 
         //Button Behaviour On Pressed
         Vb.RegisterOnButtonPressed(OnButtonPressed);

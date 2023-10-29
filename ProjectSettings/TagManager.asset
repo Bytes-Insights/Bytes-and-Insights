@@ -17,6 +17,7 @@ TagManager:
   - Site_RangeController
   - User
   - Site_Controller
+  - User_Emoji
   layers:
   - Default
   - TransparentFX

@@ -15,12 +15,33 @@ public abstract class Subject : MonoBehaviour
     protected void RemoveObserver(Observer observer){
         _observers.Remove(observer);
     }
+
+    protected void AddObserver(GameObject gameObject){
+        if (gameObject.GetComponent<Observer>() != null)
+            _observers.Add(gameObject.GetComponent<Observer>());
+    }
+
+    protected void RemoveObserver(GameObject gameObject){
+        if (gameObject.GetComponent<Observer>() != null)
+            _observers.Remove(gameObject.GetComponent<Observer>());
+    }
     
     protected void NotifyObserver(bool isActive)
     {
         _observers.ForEach(_observer => {
             _observer.OnNotify(isActive, subject_name);
         });
+    }
+
+    protected void NotifySingleObserver(Observer observer, bool isActive)
+    {
+        observer.OnNotify(isActive, subject_name);
+    }
+
+    protected void NotifySingleObserver(GameObject gameObject, bool isActive)
+    {
+        if (gameObject.GetComponent<Observer>() != null)
+            gameObject.GetComponent<Observer>().OnNotify(isActive, subject_name);
     }
 
     protected void StoreObserversWithTag(string Tag)
