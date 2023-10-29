@@ -22,7 +22,7 @@ public class Range : Observer
     {
         layer_isActive = false;
 
-        Transform target_transform = transform.parent.transform.parent;
+        Transform target_transform = transform.parent;
 
         //Create sphere of range given the range, opacity and material selected
         sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
@@ -43,7 +43,7 @@ public class Range : Observer
         sphere.SetActive(layer_isActive);
     }
 
-    public override void OnNotify(bool isActive){
+    public override void OnNotify(bool isActive, string subject_name){
         layer_isActive = isActive;
         sphere.SetActive(layer_isActive);
     }

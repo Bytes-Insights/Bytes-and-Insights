@@ -15,6 +15,8 @@ TagManager:
   - Layer_Connection
   - Layer_Ranges
   - Site_RangeController
+  - User
+  - Site_Controller
   layers:
   - Default
   - TransparentFX

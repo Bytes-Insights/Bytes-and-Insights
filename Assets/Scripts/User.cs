@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Vuforia;
 
-public class User : MonoBehaviour
+public class User : Observer
 {
     // private Range range;
     private GameObject[] potentialTargets;
@@ -11,11 +11,12 @@ public class User : MonoBehaviour
 
     public  Vuforia.ImageTargetBehaviour imageTarget;
     private bool tracked = false;
-    private LayerController controllerScript;
+
+    private bool range_enabled = false;
 
     void Start()
     {
-        potentialTargets = GameObject.FindGameObjectsWithTag("Site");
+        potentialTargets = GameObject.FindGameObjectsWithTag("Site_Controller");
        //  range = GetComponent<Range>();
         renderer = GetComponent<LineRenderer>();
         renderer.enabled = false;
@@ -31,9 +32,6 @@ public class User : MonoBehaviour
         {
             imageTarget.OnTargetStatusChanged += OnTargetStatusChanged;
         }
-
-        GameObject LayerController = GameObject.Find("LayerController");
-        controllerScript = LayerController.GetComponent<LayerController>();
     }
 
     void OnTargetStatusChanged(ObserverBehaviour observerbehavour, TargetStatus status)
@@ -86,9 +84,9 @@ public class User : MonoBehaviour
                 lastDist = dist;
             }
         }
+        
 
-
-        if (eligibleTarget != null && controllerScript.getConnectionLayerStatus())
+        if (eligibleTarget != null && range_enabled)
         {
             renderer.enabled = true;
             renderer.SetPosition(0, transform.position);
@@ -109,5 +107,11 @@ public class User : MonoBehaviour
             }
         }
         return null;
+    }
+
+    public override void OnNotify(bool isActive, string caller){
+        Debug.Log(caller);
+        if(caller == "RangeLayerController")
+            range_enabled = isActive;
     }
 }

@@ -6,6 +6,7 @@ public abstract class Subject : MonoBehaviour
 {
 
     private List<Observer> _observers = new List<Observer>();
+    protected string subject_name;
 
     protected void AddObserver(Observer observer){
         _observers.Add(observer);
@@ -18,7 +19,7 @@ public abstract class Subject : MonoBehaviour
     protected void NotifyObserver(bool isActive)
     {
         _observers.ForEach(_observer => {
-            _observer.OnNotify(isActive);
+            _observer.OnNotify(isActive, subject_name);
         });
     }
 
@@ -37,5 +38,9 @@ public abstract class Subject : MonoBehaviour
 
         Debug.Log(_observers.Count);
 
+    }
+
+    protected void setSubjectName(string name){
+        subject_name = name;
     }
 }

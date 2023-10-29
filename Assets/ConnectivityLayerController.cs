@@ -3,19 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using Vuforia;
 
-public class RangeLayerController : Subject
+public class ConnectivityLayerController : Subject
 {
     public bool isActive = false;
     public VirtualButtonBehaviour Vb;
+    public string subject_name = "ConnectivityLayerController";
 
     void Start()
     {
-           
-        setSubjectName("RangeLayerController");
-
         //Push all sites as observers
-        StoreObserversWithTag("Site_Controller");
-        StoreObserversWithTag("User");
+        StoreObserversWithTag("Site_ConnectivityController");
 
         //Button Behaviour On Pressed
         Vb.RegisterOnButtonPressed(OnButtonPressed);
