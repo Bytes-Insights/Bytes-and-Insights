@@ -27,24 +27,24 @@ public class ProgressCircleManager : MonoBehaviour
         indicatorImage.transform.position = screenPosition;
     }
 
-    void Reset()
+    public void Reset()
     {
         SetDisplayed(false);
-        SetProgress(0.5F);
+        SetProgress(0F);
         SetTarget(null);
     }
 
-    void SetTarget(GameObject target)
+    public void SetTarget(GameObject target)
     {
         this.target = target;
     }
 
-    void SetDisplayed(bool displayed)
+    public void SetDisplayed(bool displayed)
     {
         this.indicatorImage.enabled = displayed;
     }
 
-    void SetProgress(float progress)
+    public void SetProgress(float progress)
     {
         progress = Mathf.Clamp(progress, 0, 1);
         this.indicatorImage.fillAmount = progress;
