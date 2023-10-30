@@ -12,17 +12,21 @@ public class User : Observer
     public  Vuforia.ImageTargetBehaviour imageTarget;
     private bool tracked = false;
 
+    //Layers
     private bool range_enabled = false;
     private bool connectivity_enabled = false;
-    private bool isConnected = false;
+
+    //Connection details
+    private bool is_connected = false;
+    public float user_load = 1000;
+    // 1 to 5 (High to Low)
+    public int user_priority = 5;
+    private Site site_connection = null;
+
+    //Emojis
     private SpriteRenderer userEmoji;
     public Sprite emoji_happy;
     public Sprite emoji_sad;
-
-    //In miliseconds
-    public float time_between_connections = 2000.0f;
-    private float timer = 0.0f;
-    private float last_connection = 0.0f;
 
     void Start()
     {
@@ -61,9 +65,6 @@ public class User : Observer
 
     void Update()
     {
-        Debug.Log("HEY");
-        //Update timer
-        timer += Time.deltaTime;
 
         if (!tracked)
         {
@@ -89,32 +90,56 @@ public class User : Observer
             Transform targetTransform = referencePoint ? referencePoint.transform : potentialTarget.transform;
 
             double dist = (targetTransform.position - this.transform.position).magnitude;
+
             if (dist > requiredRange) continue;
 
             if (eligibleTarget == null ||
                 eligibleTarget.networkVersion < site.networkVersion ||
                 (eligibleTarget.networkVersion == site.networkVersion && dist < lastDist))
             {
+
                 eligibleTarget = site;
                 eligibleTargetTransform = targetTransform;
                 lastDist = dist;
+
+                
             }
         }
 
+        //If site has changed, we disconnect from previous one
+        if((eligibleTarget != site_connection || eligibleTarget == null) && site_connection != null){
+            site_connection.disconnect(transform.gameObject);
+            setEmoji(false);
+            Debug.Log("Disconnection of previous site");
+            if(eligibleTarget == null)
+                site_connection = eligibleTarget;
+        }
+
+        //Try connecting to new site
         if (eligibleTarget != null && (range_enabled || connectivity_enabled))
         {
+            //Connect to new target
+            if(eligibleTarget != site_connection){
+                eligibleTarget.GetComponent<Site>().connectToSite(transform.gameObject, user_load);
+                site_connection = eligibleTarget;
+            }
+
+            //Draw connection line
             renderer.enabled = true;
             renderer.SetPosition(0, transform.position);
             renderer.SetPosition(1, eligibleTargetTransform.position);
+            
         }
         else
         {
             renderer.enabled = false;
         }
 
-        if(!connectivity_enabled)
-            userEmoji.enabled = false;
-
+        userEmoji.enabled = connectivity_enabled;
+            
+        if(eligibleTarget == null)
+            setEmoji(false);
+        
     }
     GameObject FindChildWithTag(Transform parent, string tag)
     {
@@ -134,16 +159,23 @@ public class User : Observer
             range_enabled = isActive;
         if(caller == "ConnectivityLayerController")
             connectivity_enabled = isActive;
-            userEmoji.enabled = isActive;
         if(caller == "Site"){
-            isConnected = isActive;
-            //Store connection timestamps
-            if(isActive){
-                last_connection = timer;
-                userEmoji.sprite = emoji_happy;
-            }else{
-                userEmoji.sprite = emoji_sad;
-            }
+            is_connected = isActive;
         }
+    }
+
+    public void setEmoji(bool isHappy){
+        if(isHappy)
+            userEmoji.sprite=emoji_happy;
+        else
+            userEmoji.sprite=emoji_sad;
+    }
+
+    public int getPriority(){
+        return user_priority;
+    }
+
+    public float getCapacity(){
+        return user_load;
     }
 }
