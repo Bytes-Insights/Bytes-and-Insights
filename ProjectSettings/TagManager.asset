@@ -14,10 +14,10 @@ TagManager:
   - InfoPieces
   - Layer_Connection
   - Layer_Ranges
-  - Site_RangeController
   - User
   - Site_Controller
   - User_Emoji
+  - Site_CapacityController
   layers:
   - Default
   - TransparentFX

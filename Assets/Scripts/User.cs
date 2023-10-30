@@ -60,6 +60,10 @@ public class User : Observer
         {
             this.renderer.enabled = false;
             tracked = false;
+            if(site_connection != null){
+                site_connection.disconnect(transform.gameObject);
+                site_connection = null;
+            }
         }
     }
 
@@ -154,7 +158,6 @@ public class User : Observer
     }
 
     public override void OnNotify(bool isActive, string caller){
-        Debug.Log(caller);
         if(caller == "RangeLayerController")
             range_enabled = isActive;
         if(caller == "ConnectivityLayerController")

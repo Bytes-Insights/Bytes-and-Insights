@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Vuforia;
 using System.Linq;
+using TMPro;
 
 public class Site : Subject
 {
@@ -75,6 +76,7 @@ public class Site : Subject
         NotifySingleObserver(User, false);
         RemoveObserver(User);
         potentialUsers.Remove(User);
+        connectedUsers.Remove(User);
         notifyLatency();
     }
 
@@ -115,6 +117,40 @@ public class Site : Subject
         foreach (GameObject user in potentialUsersNotInNewConnectedUsers) {
             User userComponent = user.GetComponent<User>();
             userComponent.setEmoji(false);
+        }
+
+        setCapacity();
+    }
+
+    private void setCapacity(){
+        //Change text
+        TextMeshPro text = transform.Find("Capacity").gameObject.GetComponent<TextMeshPro>();
+        int percentage = 0;
+        if(capacity < 0)
+            percentage = 100;
+        else
+            percentage = (int)((latency-capacity) / latency * 100);
+
+        text.text = percentage.ToString() + "%";
+
+        float percentageNormalized = percentage / 100.0f;
+
+        // Change color
+        if (percentageNormalized > 0.9f)
+        {
+            text.color = Color.red;
+        }
+        else if (percentageNormalized > 0.7f)
+        {
+            text.color = Color.Lerp(new Color(1.0f, 0.5f, 0.0f), Color.red, (percentageNormalized - 0.7f) / 0.2f);
+        }
+        else if (percentageNormalized > 0.5f)
+        {
+            text.color = Color.Lerp(Color.yellow, new Color(1.0f, 0.5f, 0.0f), (percentageNormalized - 0.5f) / 0.2f);
+        }
+        else
+        {
+            text.color = Color.green;
         }
     }
 }

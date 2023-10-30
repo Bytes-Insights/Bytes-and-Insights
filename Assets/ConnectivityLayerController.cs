@@ -13,6 +13,7 @@ public class ConnectivityLayerController : Subject
         setSubjectName("ConnectivityLayerController");
         //Push all sites as observers
         StoreObserversWithTag("User");
+        StoreObserversWithTag("Site_CapacityController");
 
         //Button Behaviour On Pressed
         Vb.RegisterOnButtonPressed(OnButtonPressed);
