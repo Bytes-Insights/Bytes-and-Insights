@@ -1815,6 +1815,7 @@ GameObject:
   m_Component:
   - component: {fileID: -8679921383154817045}
   - component: {fileID: 2223639932434330405}
+  - component: {fileID: 2999883747405497694}
   m_Layer: 0
   m_Name: chibi bj - animation walk 1
   m_TagString: Untagged
@@ -1868,6 +1869,23 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 1
+--- !u!114 &2999883747405497694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149155446097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91385772865086f41bca18cfcb8cc717, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  container: {fileID: 8345598593903254980}
+  speed: 0.2
+  loop: 1
+  fadeInPoint: 0.2
+  fadeOutPoint: 0.8
 --- !u!1 &1258605674260502358
 GameObject:
   m_ObjectHideFlags: 0
