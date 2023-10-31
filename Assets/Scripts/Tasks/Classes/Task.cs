@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class Task : MonoBehaviour
 {
+    string _description;
     Subtask[] _subtasks;
+    public delegate void ExecuteEventHandler();
+    public event ExecuteEventHandler OnComplete;
 
-    // Start is called before the first frame update
+    public Task(string description, Subtask[] subtasks){
+        _description=description;
+        _subtasks=subtasks;
+    }
+
     void Start()
     {
         foreach(Subtask task in _subtasks){
@@ -23,7 +30,11 @@ public class Task : MonoBehaviour
         }
 
         if(result){
-            //Resolve task
+            OnComplete.Invoke();
         }
+    }
+
+    public string getDescription(){
+        return _description;
     }
 }
