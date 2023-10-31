@@ -5,6 +5,9 @@ using Vuforia;
 
 public class User : Observer
 {
+    //Shader variables
+    private MeshRenderer[] renderers;
+
     // private Range range;
     private GameObject[] potentialTargets;
     private LineRenderer renderer;
@@ -48,6 +51,9 @@ public class User : Observer
         {
             imageTarget.OnTargetStatusChanged += OnTargetStatusChanged;
         }
+
+        //Material Renderers from parent (User's Target GameObject)
+        renderers = GetRenderersRecursively(transform.parent);
     }
 
     void OnTargetStatusChanged(ObserverBehaviour observerbehavour, TargetStatus status)
@@ -160,8 +166,10 @@ public class User : Observer
     public override void OnNotify(bool isActive, string caller){
         if(caller == "RangeLayerController")
             range_enabled = isActive;
-        if(caller == "ConnectivityLayerController")
+        if(caller == "ConnectivityLayerController"){
             connectivity_enabled = isActive;
+            ActivateColorShift(isActive);
+        }
         if(caller == "Site"){
             is_connected = isActive;
         }
@@ -180,5 +188,50 @@ public class User : Observer
 
     public float getCapacity(){
         return user_load;
+    }
+
+    private void ActivateColorShift(bool activate)
+    {
+        foreach (var renderer in renderers)
+        {
+            Material[] materials = renderer.materials;
+            for (int i = 0; i < materials.Length; i++)
+            {
+                 materials[i].SetInt("_GlowActive", activate ? 1 : 0);
+            }
+        }
+    }
+    private void UpdateColorShift(bool red)
+    {
+        foreach (var renderer in renderers)
+        {
+            Material[] materials = renderer.materials;
+            for (int i = 0; i < materials.Length; i++)
+            {
+                 materials[i].SetInt("_IsConnected", red ? 1 : 0);
+            }
+        }
+    }
+
+    MeshRenderer[] GetRenderersRecursively(Transform parent)
+    {
+        // Initialize a list to store renderers.
+        List<MeshRenderer> renderers = new List<MeshRenderer>();
+
+        // Check if the current GameObject has a renderer, and add it to the list if it does.
+        MeshRenderer renderer = parent.GetComponent<MeshRenderer>();
+        if (renderer != null)
+        {
+            renderers.Add(renderer);
+        }
+
+        // Recursively check the children of the current GameObject.
+        foreach (Transform child in parent)
+        {
+            renderers.AddRange(GetRenderersRecursively(child));
+        }
+
+        // Return the combined list of renderers.
+        return renderers.ToArray();
     }
 }
