@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class TaskController : MonoBehaviour
 {
     private int _currentTask = 0;
     private Task[] _tasks;
 
+    TextMeshProUGUI textMeshPro;
+
+    public GameObject _billboard;
     public GameObject _task0a;
     public GameObject _task0b;
     public GameObject _task1;
@@ -14,6 +18,8 @@ public class TaskController : MonoBehaviour
     public GameObject _task3;
 
     void Start(){
+
+        textMeshPro = _billboard.GetComponent<TextMeshProUGUI>();
 
         //Task 0a
         string subtask0a_1_description = "Frame in the camera the entire map to see the city";
@@ -66,7 +72,7 @@ public class TaskController : MonoBehaviour
     
     void OnTaskCompleted(){
         //Show task description in billboard
-
+        textMeshPro.text = _tasks[_currentTask].getDescription();
 
         //Deactivate task
         _tasks[_currentTask].getGameObject().SetActive(false);
