@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig>
   <Tracking>
+    <ImageTarget name="target55" size="1.000000 1.000000" />
+    <ImageTarget name="target-2" size="1.000000 1.000000" />
+    <ImageTarget name="target-pacha-mamma" size="1.000000 1.000000" />
     <ImageTarget name="Map2-more" size="15.000000 21.248930" />
     <ImageTarget name="map-bw" size="15.000000 21.240074" />
     <ImageTarget name="Map2-A1" size="15.000000 21.248930" />
