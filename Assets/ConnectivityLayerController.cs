@@ -6,25 +6,22 @@ using Vuforia;
 public class ConnectivityLayerController : Subject
 {
     public bool isActive = false;
-    public VirtualButtonBehaviour Vb;
+    public VirtualButtonInteraction Vbi;
 
     void Start()
     {
+        Vbi.OnExecute += setIsActive;
         setSubjectName("ConnectivityLayerController");
         //Push all sites as observers
         StoreObserversWithTag("User");
         StoreObserversWithTag("Site_CapacityController");
-
-        //Button Behaviour On Pressed
-        Vb.RegisterOnButtonPressed(OnButtonPressed);
     }
 
-    public void OnButtonPressed(VirtualButtonBehaviour vb){
-        setIsActive(!isActive);
-    }
-
-    void setIsActive(bool value){
-        isActive = value;
-        NotifyObserver(isActive);
+    void setIsActive(string caller){
+        if(caller == "VirtualButtonInteractionConnectivity"){
+            Debug.Log(caller);
+            isActive = !isActive;
+            NotifyObserver(isActive);
+        }
     }
 }

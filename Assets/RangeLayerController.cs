@@ -6,27 +6,24 @@ using Vuforia;
 public class RangeLayerController : Subject
 {
     public bool isActive = false;
-    public VirtualButtonBehaviour Vb;
+    public VirtualButtonInteraction Vbi;
 
     void Start()
     {
-           
+        Vbi.OnExecute += setIsActive;
+
         setSubjectName("RangeLayerController");
 
         //Push all sites as observers
         StoreObserversWithTag("Site_Controller");
         StoreObserversWithTag("User");
-
-        //Button Behaviour On Pressed
-        Vb.RegisterOnButtonPressed(OnButtonPressed);
     }
 
-    public void OnButtonPressed(VirtualButtonBehaviour vb){
-        setIsActive(!isActive);
-    }
-
-    void setIsActive(bool value){
-        isActive = value;
-        NotifyObserver(isActive);
+    void setIsActive(string caller){
+        if(caller == "VirtualButtonInteractionRange"){
+            Debug.Log(caller);
+            isActive = !isActive;
+            NotifyObserver(isActive);
+        }
     }
 }

@@ -9,7 +9,7 @@ public class VirtualButtonInteraction : MonoBehaviour
     public ProgressCircleManager circle;
     public GameObject trackedTarget;
 
-    public delegate void ExecuteEventHandler();
+    public delegate void ExecuteEventHandler(string caller);
     public event ExecuteEventHandler OnExecute;
 
     public float delay = 0.3F;
@@ -52,7 +52,7 @@ public class VirtualButtonInteraction : MonoBehaviour
 
             if (OnExecute != null)
             {
-                OnExecute();
+                OnExecute.Invoke(transform.gameObject.name); 
             }
         }
 
@@ -72,10 +72,9 @@ public class VirtualButtonInteraction : MonoBehaviour
     private void Reset()
     {
         runningTimer = 0F;
-        pressed = false;
         executed = false;
+        pressed = false;
         barVisible = false;
-
         circle.Reset();
     }
 }
