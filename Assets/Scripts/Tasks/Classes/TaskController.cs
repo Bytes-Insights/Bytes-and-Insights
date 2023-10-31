@@ -6,9 +6,9 @@ using TMPro;
 public class TaskController : MonoBehaviour
 {
     private int _currentTask = 0;
-    private Task[] _tasks;
+    private List<Task> _tasks = new List<Task>();
 
-    TextMeshProUGUI textMeshPro;
+    TextMeshPro textMeshPro;
 
     public GameObject _billboard;
     public GameObject _task0a;
@@ -19,14 +19,13 @@ public class TaskController : MonoBehaviour
 
     void Start(){
 
-        textMeshPro = _billboard.GetComponent<TextMeshProUGUI>();
-
         //Task 0a
         string subtask0a_1_description = "Frame in the camera the entire map to see the city";
         Subtask task0a_subtask1 = new Subtask(subtask0a_1_description);
         Subtask[] task0a_subtasks = {task0a_subtask1};
         string task0a_description = "Make the virtual city appear!";
         Task task0a = new Task(task0a_description, task0a_subtasks, _task0a);
+        _tasks.Add(task0a);
         task0a.OnComplete += OnTaskCompleted;
 
         //Task 0b
@@ -35,6 +34,7 @@ public class TaskController : MonoBehaviour
         Subtask[] task0b_subtasks = {task0b_subtask1};
         string task0b_description = "Make a site appear!";
         Task task0b = new Task(task0b_description, task0b_subtasks, _task0b);
+        _tasks.Add(task0b);
         task0b.OnComplete += OnTaskCompleted;
 
         //Task 1
@@ -45,6 +45,7 @@ public class TaskController : MonoBehaviour
         Subtask[] task1_subtasks = {task1_subtask1, task1_subtask2};
         string task1_description = "Give internet to that guy in the park!";
         Task task1 = new Task(task1_description, task1_subtasks, _task1);
+        _tasks.Add(task1);
         task1.OnComplete += OnTaskCompleted;
 
         //Task 2
@@ -53,21 +54,25 @@ public class TaskController : MonoBehaviour
         Subtask[] task2_subtasks = {task2_subtask1};
         string task2_description = "Give internet to the helicopter!";
         Task task2 = new Task(task2_description, task2_subtasks, _task2);
+        _tasks.Add(task2);
         task2.OnComplete += OnTaskCompleted;
 
         //Task 3
-        string subtask3_1_description = "Give inter to guy number 1";
-        string subtask3_2_description = "Give inter to guy number 2";
-        string subtask3_3_description = "Give inter to guy number 3";
+        string subtask3_1_description = "Give internet to guy number 1";
+        string subtask3_2_description = "Give internet to guy number 2";
+        string subtask3_3_description = "Give internet to guy number 3";
         Subtask task3_subtask1 = new Subtask(subtask3_1_description);
         Subtask task3_subtask2 = new Subtask(subtask3_2_description);
         Subtask task3_subtask3 = new Subtask(subtask3_3_description);
         Subtask[] task3_subtasks = {task3_subtask1, task3_subtask2, task3_subtask3};
         string task3_description = "Give internet everyone in the park!";
         Task task3 = new Task(task3_description, task3_subtasks, _task3);
+        _tasks.Add(task3);
         task3.OnComplete += OnTaskCompleted;
 
-        _tasks[_currentTask].getGameObject().SetActive(true);
+        //_tasks[_currentTask].getGameObject().SetActive(true);
+        textMeshPro = _billboard.GetComponent<TextMeshPro>();
+        textMeshPro.text = _tasks[_currentTask].getDescription();
     }
     
     void OnTaskCompleted(){
