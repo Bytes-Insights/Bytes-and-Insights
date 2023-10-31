@@ -56,7 +56,7 @@ public class TaskController : MonoBehaviour
         Subtask task3_subtask1 = new Subtask(subtask3_1_description);
         Subtask task3_subtask2 = new Subtask(subtask3_2_description);
         Subtask task3_subtask3 = new Subtask(subtask3_3_description);
-        Subtask[] task1_subtasks = {task3_subtask1, task3_subtask2, task3_subtask3};
+        Subtask[] task3_subtasks = {task3_subtask1, task3_subtask2, task3_subtask3};
         string task3_description = "Give internet everyone in the park!";
         Task task3 = new Task(task3_description, task3_subtasks, _task3);
         task3.OnComplete += OnTaskCompleted;
@@ -66,7 +66,7 @@ public class TaskController : MonoBehaviour
     
     void OnTaskCompleted(){
         //Show task description in billboard
-        
+
 
         //Deactivate task
         _tasks[_currentTask].getGameObject().SetActive(false);
