@@ -6,9 +6,13 @@ public class Subtask : MonoBehaviour
 {
     public string _description;
     public bool _completed;
-
     public delegate void ExecuteEventHandler();
     public event ExecuteEventHandler OnCompleteStateChange;
+
+    public Subtask(string description){
+        _completed=false;
+        _description=description;
+    }
 
     public bool getCompleted(){
         return _completed;
