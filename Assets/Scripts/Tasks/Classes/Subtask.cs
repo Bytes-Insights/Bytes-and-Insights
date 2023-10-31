@@ -16,7 +16,7 @@ public class Subtask : MonoBehaviour
     public string getDescription(){
         return _description;
     }
-    public bool setCompleted(bool completed){
+    public void setCompleted(bool completed){
         _completed = completed;
         OnCompleteStateChange.Invoke();
     }
