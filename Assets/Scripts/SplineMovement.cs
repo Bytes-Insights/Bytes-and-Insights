@@ -11,6 +11,9 @@ public class SplineMovement : MonoBehaviour
     public float fadeInPoint = 0.2F;
     public float fadeOutPoint = 0.8F;
 
+    public delegate void LoopHandler();
+    public event LoopHandler OnLoop;
+
     private float splineAlpha = 0f;
 
     private void Start()
@@ -62,11 +65,33 @@ public class SplineMovement : MonoBehaviour
             else if (loop)
             {
 				splineAlpha = 0f;
+                if (OnLoop != null)
+                {
+                    OnLoop.Invoke();
+                }
             }
         }
     }
 
+    public float GetCurrentAlpha()
+    {
+        return splineAlpha;
+    }
 
+    public float GetFadeIn()
+    {
+        return fadeInPoint;
+    }
+
+    public float GetFadeOut()
+    {
+        return fadeOutPoint;
+    }
+
+    public bool IsWithinOpaqueSegment()
+    {
+        return GetCurrentAlpha() > GetFadeIn() && GetCurrentAlpha() < GetFadeOut();
+    }
 
     public void SetOpacity(float newOpacity)
     {

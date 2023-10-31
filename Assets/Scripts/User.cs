@@ -76,6 +76,11 @@ public class User : Observer
         }
     }
 
+    public bool IsConnected()
+    {
+        return this.site_connection != null;
+    }
+
     void Update()
     {
 
