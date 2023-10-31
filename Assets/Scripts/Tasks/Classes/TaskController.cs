@@ -60,12 +60,21 @@ public class TaskController : MonoBehaviour
         string task3_description = "Give internet everyone in the park!";
         Task task3 = new Task(task3_description, task3_subtasks, _task3);
         task3.OnComplete += OnTaskCompleted;
+
+        _tasks[_currentTask].getGameObject().SetActive(true);
     }
     
     void OnTaskCompleted(){
-        _currentTask++;
         //Show task description in billboard
+        
+
         //Deactivate task
+        _tasks[_currentTask].getGameObject().SetActive(false);
+
+        //Increment task
+        _currentTask++;
+
         //Activate new task
+        _tasks[_currentTask].getGameObject().SetActive(true);
     }
 }

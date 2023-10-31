@@ -5,7 +5,7 @@ using UnityEngine;
 public class Task : MonoBehaviour
 {
     string _description;
-    GameObject _taskGameObject
+    GameObject _taskGameObject;
     Subtask[] _subtasks;
     public delegate void ExecuteEventHandler();
     public event ExecuteEventHandler OnComplete;
@@ -38,5 +38,9 @@ public class Task : MonoBehaviour
 
     public string getDescription(){
         return _description;
+    }
+
+    public GameObject getGameObject(){
+        return _taskGameObject;
     }
 }
