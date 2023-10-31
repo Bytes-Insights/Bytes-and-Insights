@@ -12,7 +12,8 @@ public class User : Observer
     private GameObject[] potentialTargets;
     private LineRenderer renderer;
 
-    public  Vuforia.ImageTargetBehaviour imageTarget;
+    public bool isTarget;
+    public Vuforia.ImageTargetBehaviour imageTarget;
     private bool tracked = false;
 
     //Layers
@@ -41,7 +42,12 @@ public class User : Observer
         renderer = GetComponent<LineRenderer>();
         renderer.enabled = false;
 
+        //Material Renderers from parent (User's Target GameObject)
+        renderers = GetRenderersRecursively(transform.parent);
+
         //Find image target object
+        if(isTarget)
+            return;
         if (!imageTarget)
         {
             imageTarget = gameObject.GetComponentInParent<Vuforia.ImageTargetBehaviour>();
@@ -51,9 +57,6 @@ public class User : Observer
         {
             imageTarget.OnTargetStatusChanged += OnTargetStatusChanged;
         }
-
-        //Material Renderers from parent (User's Target GameObject)
-        renderers = GetRenderersRecursively(transform.parent);
     }
 
     void OnTargetStatusChanged(ObserverBehaviour observerbehavour, TargetStatus status)
