@@ -62,6 +62,11 @@ public class Site : Subject
         return tracked;
     }
 
+    public bool AreUsersConnected()
+    {
+        return connectedUsers.Count > 0;
+    }
+
     public Range GetRange()
     {
         return range;
