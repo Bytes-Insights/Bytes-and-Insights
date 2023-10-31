@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SiteScannedCondition : MonoBehaviour
+public class UserConnectedCondition : MonoBehaviour
 {
     public Subtask subtask;
     public bool canBeCompleted = false;
@@ -20,7 +20,7 @@ public class SiteScannedCondition : MonoBehaviour
         {
             Site controller = obj.GetComponent<Site>();
 
-            if (controller && controller.IsTracked())
+            if (controller && controller.AreUsersConnected())
             {
                 subtask.setCompleted(true);
                 return;
