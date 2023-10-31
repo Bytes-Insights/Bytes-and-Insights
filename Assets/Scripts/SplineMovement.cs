@@ -61,7 +61,7 @@ public class SplineMovement : MonoBehaviour
             }
             else if (loop)
             {
-                splineAlpha = 0f;
+				splineAlpha = 0f;
             }
         }
     }
