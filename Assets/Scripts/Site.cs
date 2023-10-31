@@ -41,6 +41,9 @@ public class Site : Subject
         {
             imageTarget.OnTargetStatusChanged += OnTargetStatusChanged;
         }
+
+        //Material Renderers from parent (User's Target GameObject)
+        renderers = GetRenderersRecursively(transform.parent);
     }
 
     void OnTargetStatusChanged(ObserverBehaviour observerbehavour, TargetStatus status)
@@ -137,7 +140,7 @@ public class Site : Subject
         text.text = percentage.ToString() + "%";
 
         float percentageNormalized = percentage / 100.0f;
-
+        UpdateColorShift(percentage);
         // Change color
         if (percentageNormalized > 0.9f)
         {
@@ -155,5 +158,39 @@ public class Site : Subject
         {
             text.color = Color.green;
         }
+    }
+
+    private void UpdateColorShift(int percentage)
+    {
+        foreach (var renderer in renderers)
+        {
+            Material[] materials = renderer.materials;
+            for (int i = 0; i < materials.Length; i++)
+            {
+                 materials[i].SetInt("_LoadPercentage", percentage);
+            }
+        }
+    }
+
+    MeshRenderer[] GetRenderersRecursively(Transform parent)
+    {
+        // Initialize a list to store renderers.
+        List<MeshRenderer> renderers = new List<MeshRenderer>();
+
+        // Check if the current GameObject has a renderer, and add it to the list if it does.
+        MeshRenderer renderer = parent.GetComponent<MeshRenderer>();
+        if (renderer != null)
+        {
+            renderers.Add(renderer);
+        }
+
+        // Recursively check the children of the current GameObject.
+        foreach (Transform child in parent)
+        {
+            renderers.AddRange(GetRenderersRecursively(child));
+        }
+
+        // Return the combined list of renderers.
+        return renderers.ToArray();
     }
 }
