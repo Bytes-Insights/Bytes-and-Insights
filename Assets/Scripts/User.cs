@@ -180,6 +180,7 @@ public class User : Observer
             userEmoji.sprite=emoji_happy;
         else
             userEmoji.sprite=emoji_sad;
+        UpdateColorShift(isHappy);
     }
 
     public int getPriority(){

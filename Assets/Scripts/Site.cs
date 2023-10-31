@@ -7,6 +7,9 @@ using TMPro;
 
 public class Site : Subject
 {
+    //Shader variables
+    private MeshRenderer[] renderers;
+
     public int networkVersion = 5;
     private Range range;
 
