@@ -9,11 +9,11 @@ public class UserConnectedCondition : SubtaskCondition
         canBeCompleted = false;
     }
 
-    void Update()
+    public bool checkCondition()
     {
         if (!canBeCompleted && subtask.getCompleted())
         {
-            return;
+            return false;
         }
 
         GameObject[] sites = GameObject.FindGameObjectsWithTag("Site_Controller");
@@ -24,9 +24,11 @@ public class UserConnectedCondition : SubtaskCondition
 
             if (controller && controller.AreUsersConnected())
             {
-                completeSubtask();
-                return;
+                isCompleted = true;
+                break;
             }
         }
+
+        return isCompleted;
     }
 }

@@ -8,12 +8,12 @@ public class SiteScannedCondition : SubtaskCondition
         subtask = s;
         canBeCompleted = false;
     }
-    
-    void Update()
+
+    override public bool checkCondition()
     {
         if (!canBeCompleted && subtask.getCompleted())
         {
-            return;
+            return false;
         }
 
         GameObject[] sites = GameObject.FindGameObjectsWithTag("Site_Controller");
@@ -24,9 +24,12 @@ public class SiteScannedCondition : SubtaskCondition
 
             if (controller && controller.IsTracked())
             {
-                completeSubtask();
-                return;
+                isCompleted = true;
+                break;
             }
         }
+
+        return isCompleted;
     }
+
 }

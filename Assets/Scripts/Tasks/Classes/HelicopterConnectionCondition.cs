@@ -14,14 +14,7 @@ public class HelicopterConnectionCondition : SubtaskCondition
         canBeCompleted = false;
         helicopterMovement = movement;
         helicopterUser = user;
-    }
-
-    void Start()
-    {
-        if (helicopterMovement != null)
-        {
-            helicopterMovement.OnLoop += HandleLoop; 
-        }    
+        helicopterMovement.OnLoop += HandleLoop; 
     }
 
     void HandleLoop()
@@ -33,7 +26,7 @@ public class HelicopterConnectionCondition : SubtaskCondition
 
         if (trackingLoop)
         {
-            subtask.setCompleted(true);
+            completeCondition();
             return;
         }
 
@@ -41,17 +34,19 @@ public class HelicopterConnectionCondition : SubtaskCondition
         trackingLoop = true;
     }
 
-    void Update()
+    public bool checkCondition()
     {
         if (!canBeCompleted && subtask.getCompleted())
         {
-            return;
+            return false;
         }
 
         if (!helicopterUser.IsConnected() && helicopterMovement.IsWithinOpaqueSegment())
         {
             trackingLoop = false;
         }
+
+        return isCompleted;
     }
 
     void SetCanBeCompleted(bool canBeCompleted)

@@ -170,26 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &36869918
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 36869913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 36869915}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: target-2
-  mDatasetName: Vuforia/Bytes-Insights.xml
-  mCastedBehaviour: {fileID: 36869915}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
---- !u!114 &36869921
+--- !u!114 &36869926
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -251,102 +232,7 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &111517026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 111517021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 111517023}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: site2-2m
-  mDatasetName: Vuforia/Bytes-Insights.xml
-  mCastedBehaviour: {fileID: 111517023}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
---- !u!114 &111517027
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 111517021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 111517023}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: site2-2m
-  mDatasetName: Vuforia/Bytes-Insights.xml
-  mCastedBehaviour: {fileID: 111517023}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
---- !u!114 &111517028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 111517021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 111517023}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: site2-2m
-  mDatasetName: Vuforia/Bytes-Insights.xml
-  mCastedBehaviour: {fileID: 111517023}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
---- !u!114 &111517029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 111517021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 111517023}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: site2-2m
-  mDatasetName: Vuforia/Bytes-Insights.xml
-  mCastedBehaviour: {fileID: 111517023}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
---- !u!114 &111517032
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 111517021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 111517023}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: site2-2m
-  mDatasetName: Vuforia/Bytes-Insights.xml
-  mCastedBehaviour: {fileID: 111517023}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
---- !u!114 &111517035
+--- !u!114 &111517039
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -381,26 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &144255897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 144255892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 144255894}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: phone
-  mDatasetName: Vuforia/Bytes-Insights.xml
-  mCastedBehaviour: {fileID: 144255894}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
---- !u!114 &144255900
+--- !u!114 &144255904
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -903,10 +770,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7565977958852037096, guid: eab82046e451ec94eb110e8b6c826bf1, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 144255897}
-    - targetCorrespondingSourceObject: {fileID: 7565977958852037096, guid: eab82046e451ec94eb110e8b6c826bf1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 144255900}
+      addedObject: {fileID: 144255904}
   m_SourcePrefab: {fileID: 100100000, guid: eab82046e451ec94eb110e8b6c826bf1, type: 3}
 --- !u!1 &284524263 stripped
 GameObject:
@@ -1056,26 +920,7 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &389381501
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 389381494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 389381497}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: site3-2m
-  mDatasetName: Vuforia/Bytes-Insights.xml
-  mCastedBehaviour: {fileID: 389381497}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
---- !u!114 &389381505
+--- !u!114 &389381510
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2224,6 +2069,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 282450001113118665, guid: 773431887e3d06d4f8f182efa93c0c55, type: 3}
   m_PrefabInstance: {fileID: 428576577}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &463930438 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1631107387609344434, guid: a0891ab2c65f3df46ab6de39e3d9693e, type: 3}
+  m_PrefabInstance: {fileID: 1439319808}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &526993038 stripped
 GameObject:
@@ -4887,26 +4737,7 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &662534424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 662534417}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 662534420}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: site1-2m
-  mDatasetName: Vuforia/Bytes-Insights.xml
-  mCastedBehaviour: {fileID: 662534420}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
---- !u!114 &662534428
+--- !u!114 &662534433
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9561,26 +9392,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9118235962498805299, guid: 6b4d466c3c23423419623870ed5f2324, type: 3}
   m_PrefabInstance: {fileID: 2014816905}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1079784685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1079784679}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 1079784681}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: Map2-more
-  mDatasetName: Vuforia/Bytes-Insights.xml
-  mCastedBehaviour: {fileID: 1079784681}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
---- !u!114 &1079784687
+--- !u!114 &1079784690
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9615,26 +9427,7 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1144259300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1144259295}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 1144259297}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: target-pacha-mamma
-  mDatasetName: Vuforia/Bytes-Insights.xml
-  mCastedBehaviour: {fileID: 1144259297}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
---- !u!114 &1144259303
+--- !u!114 &1144259307
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9865,7 +9658,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1317318266
 Transform:
   m_ObjectHideFlags: 0
@@ -11144,7 +10937,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1564389133
 Transform:
   m_ObjectHideFlags: 0
@@ -14364,10 +14157,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8199245873214105430, guid: 4d2b0b659cdcc1842b306908be043711, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 662534424}
-    - targetCorrespondingSourceObject: {fileID: 8199245873214105430, guid: 4d2b0b659cdcc1842b306908be043711, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 662534428}
+      addedObject: {fileID: 662534433}
   m_SourcePrefab: {fileID: 100100000, guid: 4d2b0b659cdcc1842b306908be043711, type: 3}
 --- !u!1 &1936524653
 GameObject:
@@ -14398,7 +14188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b793ba49b341e734bbcab6d854d92e88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _billboard: {fileID: 1701779282}
+  _billboard: {fileID: 463930438}
   _task0a: {fileID: 23329097}
   _task0b: {fileID: 23329097}
   _task1: {fileID: 1317318265}
@@ -15152,7 +14942,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1970765092
 Transform:
   m_ObjectHideFlags: 0
@@ -15290,10 +15080,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6839010567619297589, guid: 3acbbc3ee8f70b84fbdedd821412fde4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1144259300}
-    - targetCorrespondingSourceObject: {fileID: 6839010567619297589, guid: 3acbbc3ee8f70b84fbdedd821412fde4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1144259303}
+      addedObject: {fileID: 1144259307}
     - targetCorrespondingSourceObject: {fileID: 6991242152763098706, guid: 3acbbc3ee8f70b84fbdedd821412fde4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -15503,10 +15290,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6949731969203344238, guid: 6b4d466c3c23423419623870ed5f2324, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1079784685}
-    - targetCorrespondingSourceObject: {fileID: 6949731969203344238, guid: 6b4d466c3c23423419623870ed5f2324, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1079784687}
+      addedObject: {fileID: 1079784690}
     - targetCorrespondingSourceObject: {fileID: 5673308903770124778, guid: 6b4d466c3c23423419623870ed5f2324, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2014816915}
@@ -15841,22 +15625,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6839010567619297589, guid: 3acbbc3ee8f70b84fbdedd821412fde4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 111517026}
-    - targetCorrespondingSourceObject: {fileID: 6839010567619297589, guid: 3acbbc3ee8f70b84fbdedd821412fde4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 111517027}
-    - targetCorrespondingSourceObject: {fileID: 6839010567619297589, guid: 3acbbc3ee8f70b84fbdedd821412fde4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 111517028}
-    - targetCorrespondingSourceObject: {fileID: 6839010567619297589, guid: 3acbbc3ee8f70b84fbdedd821412fde4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 111517029}
-    - targetCorrespondingSourceObject: {fileID: 6839010567619297589, guid: 3acbbc3ee8f70b84fbdedd821412fde4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 111517032}
-    - targetCorrespondingSourceObject: {fileID: 6839010567619297589, guid: 3acbbc3ee8f70b84fbdedd821412fde4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 111517035}
+      addedObject: {fileID: 111517039}
     - targetCorrespondingSourceObject: {fileID: 6991242152763098706, guid: 3acbbc3ee8f70b84fbdedd821412fde4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -16142,10 +15911,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3802062906890739443, guid: ebeca264f42396745ab8da280f2d3ef6, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 389381501}
-    - targetCorrespondingSourceObject: {fileID: 3802062906890739443, guid: ebeca264f42396745ab8da280f2d3ef6, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 389381505}
+      addedObject: {fileID: 389381510}
   m_SourcePrefab: {fileID: 100100000, guid: ebeca264f42396745ab8da280f2d3ef6, type: 3}
 --- !u!1001 &2709517550509179170
 PrefabInstance:
@@ -16304,10 +16070,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3829281460376646674, guid: d5af56f4c3f3d924d8f0e5456ee4d55e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 36869918}
-    - targetCorrespondingSourceObject: {fileID: 3829281460376646674, guid: d5af56f4c3f3d924d8f0e5456ee4d55e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 36869921}
+      addedObject: {fileID: 36869926}
     - targetCorrespondingSourceObject: {fileID: 777079160341590901, guid: d5af56f4c3f3d924d8f0e5456ee4d55e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}

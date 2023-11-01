@@ -2,18 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Subtask : MonoBehaviour
+public class Subtask
 {
-    public string _description;
-    public bool _completed;
+    private string _description;
+    private bool _completed;
     private SubtaskCondition[] _subtasksConditions;
-    public delegate void ExecuteEventHandler();
-    public event ExecuteEventHandler OnCompleteStateChange;
 
-    public Subtask(string description, SubtaskCondition[] subtasksConditions){
+    public Subtask(string description){
         _completed=false;
         _description=description;
-        _subtasksConditions=subtasksConditions;
     }
 
     public bool getCompleted(){
@@ -22,8 +19,33 @@ public class Subtask : MonoBehaviour
     public string getDescription(){
         return _description;
     }
+    public void setConditions(SubtaskCondition[] subtasksConditions){
+        _subtasksConditions=subtasksConditions;
+    }
     public void setCompleted(bool completed){
         _completed = completed;
-        OnCompleteStateChange.Invoke();
+    }
+    public void conditionCompleted(){
+        bool result = true;
+        foreach(SubtaskCondition condition in _subtasksConditions){
+            if(!condition.getCompleted()){
+                result = false;
+                break;
+            }
+        }
+        Debug.Log(result);
+        if(result)
+            setCompleted(true);
+    }
+    public bool checkConditions(){
+        bool result = true;
+        Debug.Log(_subtasksConditions);
+        foreach(SubtaskCondition condition in _subtasksConditions){
+            if(!condition.checkCondition()){
+                result = false;
+                break; 
+            }
+        }
+        return result;
     }
 }

@@ -2,13 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Task : MonoBehaviour
+public class Task
 {
     string _description;
     GameObject _taskGameObject;
     Subtask[] _subtasks;
-    public delegate void ExecuteEventHandler();
-    public event ExecuteEventHandler OnComplete;
 
     public Task(string description, Subtask[] subtasks, GameObject taskGameObject){
         _description=description;
@@ -16,14 +14,7 @@ public class Task : MonoBehaviour
         _taskGameObject = taskGameObject;
     }
 
-    void Start()
-    {
-        foreach(Subtask task in _subtasks){
-            task.OnCompleteStateChange += onSubtaskUpdate;
-        }
-    }
-
-    void onSubtaskUpdate(){
+    /*void onSubtaskUpdate(){
         bool result = true;
         foreach(Subtask task in _subtasks){
             result = task.getCompleted();
@@ -34,7 +25,7 @@ public class Task : MonoBehaviour
         if(result){
             OnComplete.Invoke();
         }
-    }
+    }*/
 
     public string getDescription(){
         return _description;
@@ -42,5 +33,16 @@ public class Task : MonoBehaviour
 
     public GameObject getGameObject(){
         return _taskGameObject;
+    }
+
+    public bool checkSubtasks(){
+        bool result = true;
+        foreach(Subtask subtask in _subtasks){
+            if(!subtask.checkConditions()){
+                result=false;
+                break;
+            }
+        }
+        return result;
     }
 }
