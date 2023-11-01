@@ -58,7 +58,7 @@ public class TaskController : MonoBehaviour
         //Task 1
         string subtask1_1_description = "Activate coverage layer";
         Subtask task1_subtask1 = new Subtask(subtask1_1_description);
-        SiteScannedCondition subtask1_1_condition1 = new SiteScannedCondition(task1_subtask1);
+        RangeLayerActiveCondition subtask1_1_condition1 = new RangeLayerActiveCondition(task1_subtask1);
         SubtaskCondition[] task1_subtask1_conditions = {subtask1_1_condition1};
         task1_subtask1.setConditions(task1_subtask1_conditions);
 

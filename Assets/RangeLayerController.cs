@@ -26,4 +26,8 @@ public class RangeLayerController : Subject
             NotifyObserver(isActive);
         }
     }
+
+    public bool getIsActive(){
+        return isActive;
+    }
 }
