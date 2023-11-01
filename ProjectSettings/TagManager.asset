@@ -21,6 +21,7 @@ TagManager:
   - Layer_Ranges
   - DictionaryPanel
   - Map_Controller
+  - Button_Connection
   layers:
   - Default
   - TransparentFX
