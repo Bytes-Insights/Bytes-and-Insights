@@ -24,4 +24,12 @@ public class ConnectivityLayerController : Subject
             NotifyObserver(isActive);
         }
     }
+
+    public void makeConnectionButtonAvailable(){
+        Vbi.setAvailable();
+    }
+
+    public bool getIsActive(){
+        return isActive;
+    }
 }

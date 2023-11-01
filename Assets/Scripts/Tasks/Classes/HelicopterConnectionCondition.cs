@@ -34,7 +34,7 @@ public class HelicopterConnectionCondition : SubtaskCondition
         trackingLoop = true;
     }
 
-    public bool checkCondition()
+    override public bool checkCondition()
     {
         if (!canBeCompleted && subtask.getCompleted())
         {
