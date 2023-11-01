@@ -130,6 +130,8 @@ public class Site : Subject
             userComponent.setEmoji(false);
         }
 
+        connectedUsers = newConnectedUsers;
+
         setCapacity();
     }
 

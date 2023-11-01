@@ -18,7 +18,6 @@ public class SubtaskCondition : MonoBehaviour
     }
 
     public bool getCompleted(){
-        Debug.Log("Condition Completed");
         return canBeCompleted;
     }
 
