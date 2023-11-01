@@ -16,7 +16,7 @@ public class MapScannedCondition : SubtaskCondition
             return false;
         }
 
-        GameObject[] sites = GameObject.FindGameObjectsWithTag("Site_Controller");
+        GameObject[] sites = GameObject.FindGameObjectsWithTag("Map_Controller");
 
         foreach (GameObject obj in sites)
         {

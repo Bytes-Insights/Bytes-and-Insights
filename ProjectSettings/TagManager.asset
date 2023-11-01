@@ -19,6 +19,8 @@ TagManager:
   - Site_CapacityController
   - Button_Ranges
   - Layer_Ranges
+  - DictionaryPanel
+  - Map_Controller
   layers:
   - Default
   - TransparentFX

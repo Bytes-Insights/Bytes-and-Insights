@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig>
   <Tracking>
+    <ImageTarget name="Map-rescale-XML" size="10.000000 14.165954" />
+    <ImageTarget name="Map-rescale" size="8.000000 11.332763" />
     <ImageTarget name="target55" size="2.000000 2.000000" />
     <ImageTarget name="target-2" size="2.000000 2.000000" />
     <ImageTarget name="pacha-mamma" size="2.000000 2.000000" />

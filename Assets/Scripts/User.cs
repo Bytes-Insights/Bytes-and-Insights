@@ -45,11 +45,7 @@ public class User : Observer
         //Material Renderers from parent (User's Target GameObject)
         renderers = GetRenderersRecursively(transform.parent);
 
-        //Find image target object
-        if(isTarget){
-            tracked = true;
-            return;
-        }
+
         if (!imageTarget)
         {
             imageTarget = gameObject.GetComponentInParent<Vuforia.ImageTargetBehaviour>();
@@ -85,7 +81,6 @@ public class User : Observer
 
     void Update()
     {
-
         if (!tracked)
         {
             this.renderer.enabled = false;
@@ -125,7 +120,7 @@ public class User : Observer
                 
             }
         }
-
+        
         //If site has changed, we disconnect from previous one
         if((eligibleTarget != site_connection || eligibleTarget == null) && site_connection != null){
             site_connection.disconnect(transform.gameObject);
