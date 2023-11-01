@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &36869926
+--- !u!114 &36869929
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -232,7 +232,7 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &111517039
+--- !u!114 &111517042
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -267,7 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &144255904
+--- !u!114 &144255907
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -770,7 +770,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7565977958852037096, guid: eab82046e451ec94eb110e8b6c826bf1, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 144255904}
+      addedObject: {fileID: 144255907}
   m_SourcePrefab: {fileID: 100100000, guid: eab82046e451ec94eb110e8b6c826bf1, type: 3}
 --- !u!1 &284524263 stripped
 GameObject:
@@ -920,7 +920,7 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &389381510
+--- !u!114 &389381514
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4737,7 +4737,7 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &662534433
+--- !u!114 &662534437
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9392,7 +9392,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9118235962498805299, guid: 6b4d466c3c23423419623870ed5f2324, type: 3}
   m_PrefabInstance: {fileID: 2014816905}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1079784690
+--- !u!114 &1079784692
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9427,7 +9427,7 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1144259307
+--- !u!114 &1144259310
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9441,7 +9441,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 1144259297}
   mHiddenRoot: {fileID: 0}
-  mTargetName: target-pacha-mamma
+  mTargetName: pacha-mamma
   mDatasetName: Vuforia/Bytes-Insights.xml
   mCastedBehaviour: {fileID: 1144259297}
   mMeshFilter: {fileID: 0}
@@ -14157,7 +14157,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8199245873214105430, guid: 4d2b0b659cdcc1842b306908be043711, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 662534433}
+      addedObject: {fileID: 662534437}
   m_SourcePrefab: {fileID: 100100000, guid: 4d2b0b659cdcc1842b306908be043711, type: 3}
 --- !u!1 &1936524653
 GameObject:
@@ -15055,23 +15055,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8908096550867112498, guid: 3acbbc3ee8f70b84fbdedd821412fde4, type: 3}
       propertyPath: mWidth
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8908096550867112498, guid: 3acbbc3ee8f70b84fbdedd821412fde4, type: 3}
       propertyPath: mHeight
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8908096550867112498, guid: 3acbbc3ee8f70b84fbdedd821412fde4, type: 3}
       propertyPath: mPreview
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1144259310}
     - target: {fileID: 8908096550867112498, guid: 3acbbc3ee8f70b84fbdedd821412fde4, type: 3}
       propertyPath: mAspectRatio
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8908096550867112498, guid: 3acbbc3ee8f70b84fbdedd821412fde4, type: 3}
       propertyPath: mTrackableName
-      value: target-pacha-mamma
+      value: pacha-mamma
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4178910096767397144, guid: 3acbbc3ee8f70b84fbdedd821412fde4, type: 3}
@@ -15080,7 +15080,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6839010567619297589, guid: 3acbbc3ee8f70b84fbdedd821412fde4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1144259307}
+      addedObject: {fileID: 1144259310}
     - targetCorrespondingSourceObject: {fileID: 6991242152763098706, guid: 3acbbc3ee8f70b84fbdedd821412fde4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -15290,7 +15290,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6949731969203344238, guid: 6b4d466c3c23423419623870ed5f2324, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1079784690}
+      addedObject: {fileID: 1079784692}
     - targetCorrespondingSourceObject: {fileID: 5673308903770124778, guid: 6b4d466c3c23423419623870ed5f2324, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2014816915}
@@ -15625,7 +15625,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6839010567619297589, guid: 3acbbc3ee8f70b84fbdedd821412fde4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 111517039}
+      addedObject: {fileID: 111517042}
     - targetCorrespondingSourceObject: {fileID: 6991242152763098706, guid: 3acbbc3ee8f70b84fbdedd821412fde4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -15911,7 +15911,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3802062906890739443, guid: ebeca264f42396745ab8da280f2d3ef6, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 389381510}
+      addedObject: {fileID: 389381514}
   m_SourcePrefab: {fileID: 100100000, guid: ebeca264f42396745ab8da280f2d3ef6, type: 3}
 --- !u!1001 &2709517550509179170
 PrefabInstance:
@@ -15989,15 +15989,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1176202902712837909, guid: d5af56f4c3f3d924d8f0e5456ee4d55e, type: 3}
       propertyPath: mWidth
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1176202902712837909, guid: d5af56f4c3f3d924d8f0e5456ee4d55e, type: 3}
       propertyPath: mHeight
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1176202902712837909, guid: d5af56f4c3f3d924d8f0e5456ee4d55e, type: 3}
       propertyPath: mPreview
       value: 
+      objectReference: {fileID: 36869929}
+    - target: {fileID: 1176202902712837909, guid: d5af56f4c3f3d924d8f0e5456ee4d55e, type: 3}
+      propertyPath: mAspectRatio
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1176202902712837909, guid: d5af56f4c3f3d924d8f0e5456ee4d55e, type: 3}
       propertyPath: mTrackableName
@@ -16070,7 +16074,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3829281460376646674, guid: d5af56f4c3f3d924d8f0e5456ee4d55e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 36869926}
+      addedObject: {fileID: 36869929}
     - targetCorrespondingSourceObject: {fileID: 777079160341590901, guid: d5af56f4c3f3d924d8f0e5456ee4d55e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
