@@ -39,9 +39,7 @@ public class TaskController : MonoBehaviour
         _tasks.Add(task0a);
         task0a.OnComplete += OnTaskCompleted;
         _task0a.SetActive(false);*/
-
-        subtaskContainer = new GameObject("SubtaskContainer");
-
+/*
         //Task 0b
         string subtask0b_1_description = "Scan a target";
         Subtask task0b_subtask1 = new Subtask(subtask0b_1_description);
@@ -54,7 +52,10 @@ public class TaskController : MonoBehaviour
         _tasks.Add(task0b);
         //task0b.OnComplete += OnTaskCompleted;
         _task0b.SetActive(false);
-
+*/
+        GameObject button = GameObject.FindGameObjectsWithTag("Button_Ranges")[0];
+        RangeLayerController controller = button.GetComponent<RangeLayerController>();
+        controller.makeRangeButtonAvailable();
         //Task 1
         string subtask1_1_description = "Activate coverage layer";
         Subtask task1_subtask1 = new Subtask(subtask1_1_description);
