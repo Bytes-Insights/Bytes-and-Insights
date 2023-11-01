@@ -16,19 +16,15 @@ public class RangeLayerActiveCondition : SubtaskCondition
             return false;
         }
 
-        GameObject[] button = GameObject.FindGameObjectsWithTag("Button_Ranges");
+        GameObject button = GameObject.FindGameObjectsWithTag("Button_Ranges")[0];
+        RangeLayerController controller = button.GetComponent<RangeLayerController>();
 
-        foreach (GameObject obj in button)
+        if (controller && controller.getIsActive())
         {
-            RangeLayerController controller = obj.GetComponent<RangeLayerController>();
-
-            if (controller && controller.getIsActive())
-            {
-                Debug.Log("YES");
-                isCompleted = true;
-                break;
-            }
+            Debug.Log("YES");
+            isCompleted = true;
         }
+        
 
         return isCompleted;
     }

@@ -27,6 +27,10 @@ public class RangeLayerController : Subject
         }
     }
 
+    public void makeRangeButtonAvailable(){
+        Vbi.setAvailable();
+    }
+
     public bool getIsActive(){
         return isActive;
     }

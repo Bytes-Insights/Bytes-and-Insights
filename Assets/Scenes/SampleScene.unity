@@ -13328,6 +13328,14 @@ PrefabInstance:
       propertyPath: mPrevTransform.e23
       value: 0.84668833
       objectReference: {fileID: 0}
+    - target: {fileID: 1990957667222708294, guid: 4d2b0b659cdcc1842b306908be043711, type: 3}
+      propertyPath: mPreview
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812437943705570505, guid: 4d2b0b659cdcc1842b306908be043711, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5026996332335298918, guid: 4d2b0b659cdcc1842b306908be043711, type: 3}
       propertyPath: triggerTime
       value: 1
@@ -13372,9 +13380,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7071587658922109971, guid: 4d2b0b659cdcc1842b306908be043711, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8199245873214105430, guid: 4d2b0b659cdcc1842b306908be043711, type: 3}
       propertyPath: m_Name
       value: RangeButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 8199245873214105430, guid: 4d2b0b659cdcc1842b306908be043711, type: 3}
+      propertyPath: m_TagString
+      value: Button_Ranges
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8432140984374142915, guid: 4d2b0b659cdcc1842b306908be043711, type: 3}

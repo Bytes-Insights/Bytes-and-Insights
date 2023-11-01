@@ -123,6 +123,12 @@ public class TaskController : MonoBehaviour
 
         //Activate new task
         _tasks[_currentTask].getGameObject().SetActive(true);
+
+        if(_currentTask > 0){
+            GameObject button = GameObject.FindGameObjectsWithTag("Button_Ranges")[0];
+            RangeLayerController controller = button.GetComponent<RangeLayerController>();
+            controller.makeRangeButtonAvailable();
+        }
     }
 
     private void checkTask(){

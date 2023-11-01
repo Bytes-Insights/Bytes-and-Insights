@@ -19,6 +19,7 @@ public class VirtualButtonInteraction : MonoBehaviour
     private bool pressed = false;
     private bool executed = false;
     private bool barVisible = false;
+    private bool isAvailable = false;
 
     void Start()
     {
@@ -28,7 +29,7 @@ public class VirtualButtonInteraction : MonoBehaviour
 
     void Update()
     {
-        if (!pressed || executed)
+        if (!pressed || executed || !isAvailable)
         {
             return;
         }
@@ -76,5 +77,9 @@ public class VirtualButtonInteraction : MonoBehaviour
         pressed = false;
         barVisible = false;
         circle.Reset();
+    }
+
+    public void setAvailable(){
+        isAvailable = true;
     }
 }
