@@ -475,8 +475,10 @@ MonoBehaviour:
   circle: {fileID: 6240958994647388744}
   trackedTarget: {fileID: 3802062906890739443}
   buttonVisual: {fileID: 4205891283153788068}
-  unusedColor: {r: 0.27754536, g: 0.5943396, b: 0.34639576, a: 0.5019608}
-  usedColor: {r: 0.26962438, g: 0.6886792, b: 0.36274764, a: 0.8}
+  unusedColorInactive: {r: 0.29025725, g: 0.6886792, b: 0.21115166, a: 0.5019608}
+  unusedColorActive: {r: 0.83137256, g: 0.12941177, b: 0.12941177, a: 0.5019608}
+  usedColorActive: {r: 0.83137256, g: 0.12941177, b: 0.12941177, a: 0.8}
+  usedColorInactive: {r: 0.2901961, g: 0.6901961, b: 0.21176471, a: 0.8}
   delay: 0.3
   triggerTime: 3
 --- !u!1 &4652857296776000556

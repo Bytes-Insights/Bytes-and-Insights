@@ -9,8 +9,10 @@ public class VirtualButtonInteraction : MonoBehaviour
     public ProgressCircleManager circle;
     public GameObject trackedTarget;
     public GameObject buttonVisual;
-    public Color unusedColor;
-    public Color usedColor;
+    public Color unusedColorInactive;
+    public Color unusedColorActive;
+    public Color usedColorActive;
+    public Color usedColorInactive;
 
     public delegate void ExecuteEventHandler(string caller);
     public event ExecuteEventHandler OnExecute;
@@ -24,13 +26,14 @@ public class VirtualButtonInteraction : MonoBehaviour
     private bool barVisible = false;
     private bool isAvailable = false;
     private bool isButtonActive = false;
+    private bool isUsed = false;
 
     void Start()
     {
         virtualButton.RegisterOnButtonPressed(OnButtonPressed);
         virtualButton.RegisterOnButtonReleased(OnButtonReleased);
 
-        UpdateMaterial(unusedColor);
+        UpdateMaterial(isButtonActive ? unusedColorActive : unusedColorInactive);
     }
 
     void UpdateMaterial(Color color)
@@ -57,10 +60,11 @@ public class VirtualButtonInteraction : MonoBehaviour
             if (!barVisible)
             {
                 barVisible = true;
+                isUsed = true;
                 circle.SetTarget(trackedTarget);
                 circle.SetDisplayed(true);
 
-                UpdateMaterial(usedColor);
+                UpdateMaterial(isButtonActive ? usedColorActive : usedColorInactive);
             }
 
             circle.SetProgress((runningTimer - delay) / triggerTime);
@@ -69,6 +73,7 @@ public class VirtualButtonInteraction : MonoBehaviour
         if (runningTimer >= triggerTime + delay)
         {
             executed = true;
+            isUsed = false;
             circle.Reset();
 
             if (OnExecute != null)
@@ -76,7 +81,7 @@ public class VirtualButtonInteraction : MonoBehaviour
                 OnExecute.Invoke(transform.gameObject.name);
             }
 
-            UpdateMaterial(unusedColor);
+            UpdateMaterial(isButtonActive ? unusedColorActive : unusedColorInactive);
         }
 
         runningTimer += Time.deltaTime;
@@ -98,8 +103,9 @@ public class VirtualButtonInteraction : MonoBehaviour
         executed = false;
         pressed = false;
         barVisible = false;
+        isUsed = false;
         circle.Reset();
-        UpdateMaterial(unusedColor);
+        UpdateMaterial(isButtonActive ? unusedColorActive : unusedColorInactive);
     }
 
     public void setAvailable(){
@@ -108,5 +114,7 @@ public class VirtualButtonInteraction : MonoBehaviour
 
     public void toggleButton(bool state){
         isButtonActive=state;
+
+        UpdateMaterial(isButtonActive ? (isUsed ? usedColorActive : unusedColorActive) : (isUsed ? usedColorInactive : unusedColorInactive));
     }
 }
