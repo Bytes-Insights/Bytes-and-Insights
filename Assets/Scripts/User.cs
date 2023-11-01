@@ -32,7 +32,7 @@ public class User : Observer
     public Sprite emoji_happy;
     public Sprite emoji_sad;
 
-    void Start()
+    void Awake()
     {
         //Find child GameObject user emoji & deactivate
         userEmoji = transform.Find("UserEmoji").gameObject.GetComponent<SpriteRenderer>();
@@ -120,7 +120,7 @@ public class User : Observer
                 
             }
         }
-        
+
         //If site has changed, we disconnect from previous one
         if((eligibleTarget != site_connection || eligibleTarget == null) && site_connection != null){
             site_connection.disconnect(transform.gameObject);

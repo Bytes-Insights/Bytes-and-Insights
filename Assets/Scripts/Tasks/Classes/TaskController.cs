@@ -18,6 +18,9 @@ public class TaskController : MonoBehaviour
     public GameObject _task3;
     private GameObject subtaskContainer;
 
+    public SplineMovement _helicopterSpline;
+    public User _helicopterUser;
+
     void Start(){
 
         //Task 0a
@@ -39,7 +42,7 @@ public class TaskController : MonoBehaviour
         _tasks.Add(task0a);
         task0a.OnComplete += OnTaskCompleted;
         _task0a.SetActive(false);*/
-/*
+        /*
         //Task 0b
         string subtask0b_1_description = "Scan a target";
         Subtask task0b_subtask1 = new Subtask(subtask0b_1_description);
@@ -52,10 +55,7 @@ public class TaskController : MonoBehaviour
         _tasks.Add(task0b);
         //task0b.OnComplete += OnTaskCompleted;
         _task0b.SetActive(false);
-*/
-        GameObject button = GameObject.FindGameObjectsWithTag("Button_Ranges")[0];
-        RangeLayerController controller = button.GetComponent<RangeLayerController>();
-        controller.makeRangeButtonAvailable();
+
         //Task 1
         string subtask1_1_description = "Activate coverage layer";
         Subtask task1_subtask1 = new Subtask(subtask1_1_description);
@@ -75,12 +75,24 @@ public class TaskController : MonoBehaviour
         _tasks.Add(task1);
         //task1.OnComplete += OnTaskCompleted;
         _task1.SetActive(false);
+        */
+        Debug.Log("HEY");
+        GameObject button = GameObject.FindGameObjectsWithTag("Button_Connection")[0];
+        Debug.Log("HEY");
+        ConnectivityLayerController controller = button.GetComponent<ConnectivityLayerController>();
+        Debug.Log("HEY");
+        controller.makeConnectionButtonAvailable();
+        Debug.Log("HEY");
 
         //Task 2
         string subtask2_1_description = "Don't let the helicopter disconnect from the internet";
         Subtask task2_subtask1 = new Subtask(subtask2_1_description);
+        HelicopterConnectionCondition subtask2_1_condition1 = new HelicopterConnectionCondition(task2_subtask1, _helicopterSpline, _helicopterUser);
+        SubtaskCondition[] task2_subtask1_conditions = {subtask2_1_condition1};
+        task2_subtask1.setConditions(task2_subtask1_conditions);
+
         Subtask[] task2_subtasks = {task2_subtask1};
-        string task2_description = "Give internet to the helicopter!";
+        string task2_description = "Don't let the helicopter disconnect from the internet!";
         Task task2 = new Task(task2_description, task2_subtasks, _task2);
         _tasks.Add(task2);
         //task2.OnComplete += OnTaskCompleted;
@@ -129,6 +141,12 @@ public class TaskController : MonoBehaviour
             GameObject button = GameObject.FindGameObjectsWithTag("Button_Ranges")[0];
             RangeLayerController controller = button.GetComponent<RangeLayerController>();
             controller.makeRangeButtonAvailable();
+        }
+
+        if(_currentTask > 1){
+            GameObject button = GameObject.FindGameObjectsWithTag("Button_Connection")[0];
+            ConnectivityLayerController controller = button.GetComponent<ConnectivityLayerController>();
+            controller.makeConnectionButtonAvailable();
         }
     }
 
