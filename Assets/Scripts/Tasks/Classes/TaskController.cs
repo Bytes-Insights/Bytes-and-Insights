@@ -27,6 +27,7 @@ public class TaskController : MonoBehaviour
         Task task0a = new Task(task0a_description, task0a_subtasks, _task0a);
         _tasks.Add(task0a);
         task0a.OnComplete += OnTaskCompleted;
+        _task0a.SetActive(false);
 
         //Task 0b
         string subtask0b_1_description = "Scan a target";
@@ -36,6 +37,7 @@ public class TaskController : MonoBehaviour
         Task task0b = new Task(task0b_description, task0b_subtasks, _task0b);
         _tasks.Add(task0b);
         task0b.OnComplete += OnTaskCompleted;
+        _task0b.SetActive(false);
 
         //Task 1
         string subtask1_1_description = "Activate coverage layer";
@@ -47,6 +49,7 @@ public class TaskController : MonoBehaviour
         Task task1 = new Task(task1_description, task1_subtasks, _task1);
         _tasks.Add(task1);
         task1.OnComplete += OnTaskCompleted;
+        _task1.SetActive(false);
 
         //Task 2
         string subtask2_1_description = "Don't let the helicopter disconnect from the internet";
@@ -56,6 +59,7 @@ public class TaskController : MonoBehaviour
         Task task2 = new Task(task2_description, task2_subtasks, _task2);
         _tasks.Add(task2);
         task2.OnComplete += OnTaskCompleted;
+        _task2.SetActive(false);
 
         //Task 3
         string subtask3_1_description = "Give internet to guy number 1";
@@ -69,8 +73,9 @@ public class TaskController : MonoBehaviour
         Task task3 = new Task(task3_description, task3_subtasks, _task3);
         _tasks.Add(task3);
         task3.OnComplete += OnTaskCompleted;
+        _task3.SetActive(false);
 
-        //_tasks[_currentTask].getGameObject().SetActive(true);
+        _tasks[_currentTask].getGameObject().SetActive(true);
         textMeshPro = _billboard.GetComponent<TextMeshPro>();
         textMeshPro.text = _tasks[_currentTask].getDescription();
     }
