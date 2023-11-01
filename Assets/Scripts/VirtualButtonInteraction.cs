@@ -20,6 +20,7 @@ public class VirtualButtonInteraction : MonoBehaviour
     private bool executed = false;
     private bool barVisible = false;
     private bool isAvailable = false;
+    private bool isButtonActive = false;
 
     void Start()
     {
@@ -81,5 +82,9 @@ public class VirtualButtonInteraction : MonoBehaviour
 
     public void setAvailable(){
         isAvailable = true;
+    }
+
+    public void toggleButton(bool state){
+        isButtonActive=state;
     }
 }
