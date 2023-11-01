@@ -105,7 +105,7 @@ public class User : Observer
             Transform targetTransform = referencePoint ? referencePoint.transform : potentialTarget.transform;
 
             double dist = (targetTransform.position - this.transform.position).magnitude;
-            Debug.Log(dist);
+
             if (dist > requiredRange) continue;
 
             if (eligibleTarget == null ||
@@ -120,7 +120,7 @@ public class User : Observer
                 
             }
         }
-        Debug.Log(eligibleTarget);
+        
         //If site has changed, we disconnect from previous one
         if((eligibleTarget != site_connection || eligibleTarget == null) && site_connection != null){
             site_connection.disconnect(transform.gameObject);

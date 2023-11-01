@@ -21,11 +21,9 @@ public class RangeLayerActiveCondition : SubtaskCondition
 
         if (controller && controller.getIsActive())
         {
-            Debug.Log("YES");
             isCompleted = true;
         }
         
-
         return isCompleted;
     }
 

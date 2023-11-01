@@ -39,8 +39,8 @@ public class Subtask
     }
     public bool checkConditions(){
         bool result = true;
-        Debug.Log(_subtasksConditions);
         foreach(SubtaskCondition condition in _subtasksConditions){
+            Debug.Log(condition.checkCondition());
             if(!condition.checkCondition()){
                 result = false;
                 break; 
