@@ -8,6 +8,9 @@ public class VirtualButtonInteraction : MonoBehaviour
     public VirtualButtonBehaviour virtualButton;
     public ProgressCircleManager circle;
     public GameObject trackedTarget;
+    public GameObject buttonVisual;
+    public Color unusedColor;
+    public Color usedColor;
 
     public delegate void ExecuteEventHandler(string caller);
     public event ExecuteEventHandler OnExecute;
@@ -24,6 +27,20 @@ public class VirtualButtonInteraction : MonoBehaviour
     {
         virtualButton.RegisterOnButtonPressed(OnButtonPressed);
         virtualButton.RegisterOnButtonReleased(OnButtonReleased);
+
+        UpdateMaterial(unusedColor);
+    }
+
+    void UpdateMaterial(Color color)
+    {
+        if (buttonVisual != null && color != null)
+        {
+            Material material = buttonVisual.GetComponent<Renderer>().material;
+            if (material)
+            {
+                material.SetColor("_MainColor", color);
+            }
+        }
     }
 
     void Update()
@@ -40,6 +57,8 @@ public class VirtualButtonInteraction : MonoBehaviour
                 barVisible = true;
                 circle.SetTarget(trackedTarget);
                 circle.SetDisplayed(true);
+
+                UpdateMaterial(usedColor);
             }
 
             circle.SetProgress((runningTimer - delay) / triggerTime);
@@ -52,8 +71,10 @@ public class VirtualButtonInteraction : MonoBehaviour
 
             if (OnExecute != null)
             {
-                OnExecute.Invoke(transform.gameObject.name); 
+                OnExecute.Invoke(transform.gameObject.name);
             }
+
+            UpdateMaterial(unusedColor);
         }
 
         runningTimer += Time.deltaTime;
@@ -76,5 +97,6 @@ public class VirtualButtonInteraction : MonoBehaviour
         pressed = false;
         barVisible = false;
         circle.Reset();
+        UpdateMaterial(unusedColor);
     }
 }
