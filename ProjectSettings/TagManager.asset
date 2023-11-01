@@ -13,11 +13,12 @@ TagManager:
   - InfoButton
   - InfoPieces
   - Layer_Connection
-  - Layer_Ranges
   - User
   - Site_Controller
   - User_Emoji
   - Site_CapacityController
+  - Button_Ranges
+  - Layer_Ranges
   layers:
   - Default
   - TransparentFX

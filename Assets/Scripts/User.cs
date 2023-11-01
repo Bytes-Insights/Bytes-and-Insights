@@ -46,8 +46,10 @@ public class User : Observer
         renderers = GetRenderersRecursively(transform.parent);
 
         //Find image target object
-        if(isTarget)
+        if(isTarget){
+            tracked = true;
             return;
+        }
         if (!imageTarget)
         {
             imageTarget = gameObject.GetComponentInParent<Vuforia.ImageTargetBehaviour>();

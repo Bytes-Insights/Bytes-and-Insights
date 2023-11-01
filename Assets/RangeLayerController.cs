@@ -21,9 +21,17 @@ public class RangeLayerController : Subject
 
     void setIsActive(string caller){
         if(caller == "VirtualButtonInteractionRange"){
-            Debug.Log(caller);
             isActive = !isActive;
+            Vbi.toggleButton(isActive);
             NotifyObserver(isActive);
         }
+    }
+
+    public void makeRangeButtonAvailable(){
+        Vbi.setAvailable();
+    }
+
+    public bool getIsActive(){
+        return isActive;
     }
 }

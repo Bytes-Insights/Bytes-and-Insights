@@ -22,6 +22,8 @@ public class VirtualButtonInteraction : MonoBehaviour
     private bool pressed = false;
     private bool executed = false;
     private bool barVisible = false;
+    private bool isAvailable = false;
+    private bool isButtonActive = false;
 
     void Start()
     {
@@ -45,7 +47,7 @@ public class VirtualButtonInteraction : MonoBehaviour
 
     void Update()
     {
-        if (!pressed || executed)
+        if (!pressed || executed || !isAvailable)
         {
             return;
         }
@@ -98,5 +100,13 @@ public class VirtualButtonInteraction : MonoBehaviour
         barVisible = false;
         circle.Reset();
         UpdateMaterial(unusedColor);
+    }
+
+    public void setAvailable(){
+        isAvailable = true;
+    }
+
+    public void toggleButton(bool state){
+        isButtonActive=state;
     }
 }
