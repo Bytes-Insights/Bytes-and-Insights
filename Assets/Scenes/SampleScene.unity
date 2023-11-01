@@ -14090,6 +14090,10 @@ PrefabInstance:
       propertyPath: mPreview
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5026996332335298918, guid: 4d2b0b659cdcc1842b306908be043711, type: 3}
+      propertyPath: triggerTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5964310066134837239, guid: 4d2b0b659cdcc1842b306908be043711, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.45
@@ -15064,7 +15068,7 @@ PrefabInstance:
     - target: {fileID: 8908096550867112498, guid: 3acbbc3ee8f70b84fbdedd821412fde4, type: 3}
       propertyPath: mPreview
       value: 
-      objectReference: {fileID: 1144259310}
+      objectReference: {fileID: 0}
     - target: {fileID: 8908096550867112498, guid: 3acbbc3ee8f70b84fbdedd821412fde4, type: 3}
       propertyPath: mAspectRatio
       value: 1
@@ -15848,6 +15852,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 584621803670864178, guid: ebeca264f42396745ab8da280f2d3ef6, type: 3}
+      propertyPath: triggerTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3802062906890739443, guid: ebeca264f42396745ab8da280f2d3ef6, type: 3}
       propertyPath: m_Name
       value: ConnectivityButton
@@ -15998,7 +16006,7 @@ PrefabInstance:
     - target: {fileID: 1176202902712837909, guid: d5af56f4c3f3d924d8f0e5456ee4d55e, type: 3}
       propertyPath: mPreview
       value: 
-      objectReference: {fileID: 36869929}
+      objectReference: {fileID: 0}
     - target: {fileID: 1176202902712837909, guid: d5af56f4c3f3d924d8f0e5456ee4d55e, type: 3}
       propertyPath: mAspectRatio
       value: 1
