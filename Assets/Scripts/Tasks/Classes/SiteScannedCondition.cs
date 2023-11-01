@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SiteScannedCondition : MonoBehaviour
+public class SiteScannedCondition : SubtaskCondition
 {
-    public Subtask subtask;
-    public bool canBeCompleted = false;
-
+    public SiteScannedCondition(Subtask s){
+        subtask = s;
+        canBeCompleted = false;
+    }
+    
     void Update()
     {
         if (!canBeCompleted && subtask.getCompleted())
@@ -22,14 +24,9 @@ public class SiteScannedCondition : MonoBehaviour
 
             if (controller && controller.IsTracked())
             {
-                subtask.setCompleted(true);
+                completeSubtask();
                 return;
             }
         }
-    }
-
-    void SetCanBeCompleted(bool canBeCompleted)
-    {
-        this.canBeCompleted = canBeCompleted;
     }
 }

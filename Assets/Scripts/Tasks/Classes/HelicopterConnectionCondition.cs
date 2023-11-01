@@ -2,14 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HelicopterConnectionCondition : MonoBehaviour
+public class HelicopterConnectionCondition : SubtaskCondition
 {
-    public Subtask subtask;
     public SplineMovement helicopterMovement;
     public User helicopterUser;
 
-    private bool canBeCompleted = false;
     private bool trackingLoop = false;
+
+    public HelicopterConnectionCondition(Subtask s, SplineMovement movement, User user){
+        subtask = s;
+        canBeCompleted = false;
+        helicopterMovement = movement;
+        helicopterUser = user;
+    }
 
     void Start()
     {

@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UserConnectedCondition : MonoBehaviour
+public class UserConnectedCondition : SubtaskCondition
 {
-    public Subtask subtask;
-    public bool canBeCompleted = false;
+    public UserConnectedCondition(Subtask s){
+        subtask = s;
+        canBeCompleted = false;
+    }
 
     void Update()
     {
@@ -22,14 +24,9 @@ public class UserConnectedCondition : MonoBehaviour
 
             if (controller && controller.AreUsersConnected())
             {
-                subtask.setCompleted(true);
+                completeSubtask();
                 return;
             }
         }
-    }
-
-    void SetCanBeCompleted(bool canBeCompleted)
-    {
-        this.canBeCompleted = canBeCompleted;
     }
 }
