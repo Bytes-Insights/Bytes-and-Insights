@@ -42,6 +42,7 @@ public class TaskCompleteButton : MonoBehaviour
 
     private void onTouch()
     {
+        Debug.Log("onTeach");
         if (!executed) {
             executed = true;
             Debug.Log("HEY I HAVE BEEN TOUCHED");

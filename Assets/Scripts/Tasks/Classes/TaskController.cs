@@ -68,10 +68,6 @@ public class TaskController : MonoBehaviour
         //task0b.OnComplete += OnTaskCompleted;
         _task0b.SetActive(false);
 
-        GameObject button = GameObject.FindGameObjectsWithTag("Button_Ranges")[0];
-        RangeLayerController controller = button.GetComponent<RangeLayerController>();
-        controller.makeRangeButtonAvailable();
-
         //Task 1
         string subtask1_1_description = "Activate coverage layer";
         Subtask task1_subtask1 = new Subtask(subtask1_1_description);
@@ -105,11 +101,6 @@ public class TaskController : MonoBehaviour
         _tasks.Add(task2);
         //task2.OnComplete += OnTaskCompleted;
         _task2.SetActive(false);
-
-
-        GameObject button2 = GameObject.FindGameObjectsWithTag("Button_Connection")[0];
-        ConnectivityLayerController controller2 = button2.GetComponent<ConnectivityLayerController>();
-        controller2.makeConnectionButtonAvailable();
 
         //Task 3
         GameObject[] _task3Chibis = {_chibi1, _chibi2, _chibi3, _chibi4, _chibi5};
@@ -166,9 +157,12 @@ public class TaskController : MonoBehaviour
     void OnTaskCompleted(){
         Debug.Log("Completed");
 
-        _completeButton1.gameObject.SetActive(false);
-        _completeButton2.gameObject.SetActive(false);
-        _completeButton3.gameObject.SetActive(false);
+        if(_currentTask == 0)
+            _completeButton1.gameObject.SetActive(false);
+        if(_currentTask == 1)
+            _completeButton2.gameObject.SetActive(false);
+        if(_currentTask == 2)
+            _completeButton3.gameObject.SetActive(false);
 
         //Deactivate task
         _tasks[_currentTask].getGameObject().SetActive(false);
@@ -211,7 +205,7 @@ public class TaskController : MonoBehaviour
 
 
             if (_currentTask == 1) {
-                if (!_completeButton1.gameObject.activeSelf) {
+                if (!_completeButton2.gameObject.activeSelf) {
                     _completeButton2.gameObject.SetActive(true);
                     _completeButton2.OnExecute += OnTaskCompleted;
                 }
@@ -220,7 +214,7 @@ public class TaskController : MonoBehaviour
 
 
             if (_currentTask == 2) {
-                if (!_completeButton1.gameObject.activeSelf) {
+                if (!_completeButton3.gameObject.activeSelf) {
                     _completeButton3.gameObject.SetActive(true);
                     _completeButton3.OnExecute += OnTaskCompleted;
                 }
