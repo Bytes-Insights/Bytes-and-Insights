@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &36869925
+--- !u!114 &36869918
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -377,7 +377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTarget: 1
   imageTarget: {fileID: 1079784681}
-  replacementTracker: {fileID: 0}
+  replacementTracker: {fileID: 1233535002}
   user_load: 500
   user_priority: 1
   emoji_happy: {fileID: 21300000, guid: 2383847ff1a5ad04f982a872ddc6bd71, type: 3}
@@ -398,7 +398,7 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &111517033
+--- !u!114 &111517026
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -433,26 +433,7 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &144255904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 144255892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 144255894}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: phone
-  mDatasetName: Vuforia/Bytes-Insights.xml
-  mCastedBehaviour: {fileID: 144255894}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
---- !u!114 &144255905
+--- !u!114 &144255897
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -963,10 +944,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7565977958852037096, guid: eab82046e451ec94eb110e8b6c826bf1, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 144255905}
-    - targetCorrespondingSourceObject: {fileID: 7565977958852037096, guid: eab82046e451ec94eb110e8b6c826bf1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 144255904}
+      addedObject: {fileID: 144255897}
     - targetCorrespondingSourceObject: {fileID: 7849297929296675146, guid: eab82046e451ec94eb110e8b6c826bf1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 222807155}
@@ -1175,7 +1153,7 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &389381509
+--- !u!114 &389381501
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1611,6 +1589,10 @@ PrefabInstance:
       propertyPath: imageTarget
       value: 
       objectReference: {fileID: 1079784681}
+    - target: {fileID: 2261607453049453822, guid: 773431887e3d06d4f8f182efa93c0c55, type: 3}
+      propertyPath: replacementTracker
+      value: 
+      objectReference: {fileID: 1233535002}
     - target: {fileID: 5869863260976234107, guid: 773431887e3d06d4f8f182efa93c0c55, type: 3}
       propertyPath: loop
       value: 0
@@ -5359,7 +5341,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTarget: 1
   imageTarget: {fileID: 1079784681}
-  replacementTracker: {fileID: 0}
+  replacementTracker: {fileID: 1233535002}
   user_load: 500
   user_priority: 1
   emoji_happy: {fileID: 21300000, guid: 2383847ff1a5ad04f982a872ddc6bd71, type: 3}
@@ -5525,7 +5507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTarget: 1
   imageTarget: {fileID: 1079784681}
-  replacementTracker: {fileID: 0}
+  replacementTracker: {fileID: 1233535002}
   user_load: 500
   user_priority: 1
   emoji_happy: {fileID: 21300000, guid: 2383847ff1a5ad04f982a872ddc6bd71, type: 3}
@@ -7666,6 +7648,10 @@ PrefabInstance:
       propertyPath: imageTarget
       value: 
       objectReference: {fileID: 1079784681}
+    - target: {fileID: 4882318939295142324, guid: f072995f1dd046f4aa81d47013c29a14, type: 3}
+      propertyPath: replacementTracker
+      value: 
+      objectReference: {fileID: 1233535002}
     - target: {fileID: 5008576541226667824, guid: f072995f1dd046f4aa81d47013c29a14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -8152,7 +8138,7 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &808360887
+--- !u!114 &808360879
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10445,7 +10431,7 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1144259307
+--- !u!114 &1144259300
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10572,64 +10558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4cbe0279ec1b664391295231448baff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1233535003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1079784679}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 1079784681}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: Map-rescale-XML
-  mDatasetName: Vuforia/Bytes-Insights.xml
-  mCastedBehaviour: {fileID: 1079784681}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &1233535004
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1079784679}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 1079784681}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: Map-rescale-XML
-  mDatasetName: Vuforia/Bytes-Insights.xml
-  mCastedBehaviour: {fileID: 1079784681}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
---- !u!114 &1233535005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1079784679}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 1079784681}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: Map-rescale-XML
-  mDatasetName: Vuforia/Bytes-Insights.xml
-  mCastedBehaviour: {fileID: 1079784681}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
---- !u!114 &1233535006
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10899,7 +10828,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1183878320269975232, guid: 206ccf452065e75428f44d895abcb9bc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.4636917
+      value: 700
       objectReference: {fileID: 0}
     - target: {fileID: 1183878320269975232, guid: 206ccf452065e75428f44d895abcb9bc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11127,7 +11056,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTarget: 1
   imageTarget: {fileID: 1079784681}
-  replacementTracker: {fileID: 0}
+  replacementTracker: {fileID: 1233535002}
   user_load: 500
   user_priority: 1
   emoji_happy: {fileID: 21300000, guid: 2383847ff1a5ad04f982a872ddc6bd71, type: 3}
@@ -12610,7 +12539,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3829281460376646674, guid: d5af56f4c3f3d924d8f0e5456ee4d55e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1484276843}
+      addedObject: {fileID: 1484276836}
     - targetCorrespondingSourceObject: {fileID: 3147413488035133627, guid: d5af56f4c3f3d924d8f0e5456ee4d55e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1484276835}
@@ -12690,7 +12619,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.05, y: 0.14, z: 0.05}
   m_Center: {x: 0, y: 0.065, z: 0}
---- !u!114 &1484276843
+--- !u!114 &1484276836
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15148,7 +15077,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1183878320269975232, guid: 206ccf452065e75428f44d895abcb9bc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.4636917
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 1183878320269975232, guid: 206ccf452065e75428f44d895abcb9bc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -15380,7 +15309,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8199245873214105430, guid: 4d2b0b659cdcc1842b306908be043711, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 808360887}
+      addedObject: {fileID: 808360879}
     - targetCorrespondingSourceObject: {fileID: 5191616873259164235, guid: 4d2b0b659cdcc1842b306908be043711, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -16269,7 +16198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTarget: 1
   imageTarget: {fileID: 1079784681}
-  replacementTracker: {fileID: 0}
+  replacementTracker: {fileID: 1233535002}
   user_load: 500
   user_priority: 1
   emoji_happy: {fileID: 21300000, guid: 2383847ff1a5ad04f982a872ddc6bd71, type: 3}
@@ -17286,7 +17215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTarget: 1
   imageTarget: {fileID: 1079784681}
-  replacementTracker: {fileID: 0}
+  replacementTracker: {fileID: 1233535002}
   user_load: 500
   user_priority: 1
   emoji_happy: {fileID: 21300000, guid: 2383847ff1a5ad04f982a872ddc6bd71, type: 3}
@@ -17448,7 +17377,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6839010567619297589, guid: 3acbbc3ee8f70b84fbdedd821412fde4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1144259307}
+      addedObject: {fileID: 1144259300}
     - targetCorrespondingSourceObject: {fileID: 2473309535736263808, guid: 3acbbc3ee8f70b84fbdedd821412fde4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2013505857}
@@ -17762,16 +17691,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6949731969203344238, guid: 6b4d466c3c23423419623870ed5f2324, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1233535006}
-    - targetCorrespondingSourceObject: {fileID: 6949731969203344238, guid: 6b4d466c3c23423419623870ed5f2324, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1233535005}
-    - targetCorrespondingSourceObject: {fileID: 6949731969203344238, guid: 6b4d466c3c23423419623870ed5f2324, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1233535004}
-    - targetCorrespondingSourceObject: {fileID: 6949731969203344238, guid: 6b4d466c3c23423419623870ed5f2324, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1233535003}
     - targetCorrespondingSourceObject: {fileID: 1402965622428468171, guid: 6b4d466c3c23423419623870ed5f2324, type: 3}
       insertIndex: -1
       addedObject: {fileID: 737953885}
@@ -18214,7 +18134,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6839010567619297589, guid: 3acbbc3ee8f70b84fbdedd821412fde4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 111517033}
+      addedObject: {fileID: 111517026}
     - targetCorrespondingSourceObject: {fileID: 2473309535736263808, guid: 3acbbc3ee8f70b84fbdedd821412fde4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2063947178}
@@ -18600,7 +18520,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3802062906890739443, guid: ebeca264f42396745ab8da280f2d3ef6, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 389381509}
+      addedObject: {fileID: 389381501}
     - targetCorrespondingSourceObject: {fileID: 6007160316052520780, guid: ebeca264f42396745ab8da280f2d3ef6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -18665,6 +18585,10 @@ PrefabInstance:
       propertyPath: replacementTracker
       value: 
       objectReference: {fileID: 1233535002}
+    - target: {fileID: 2726494256818873560, guid: 773431887e3d06d4f8f182efa93c0c55, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5006219921879002448, guid: 773431887e3d06d4f8f182efa93c0c55, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -18798,7 +18722,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3829281460376646674, guid: d5af56f4c3f3d924d8f0e5456ee4d55e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 36869925}
+      addedObject: {fileID: 36869918}
     - targetCorrespondingSourceObject: {fileID: 3147413488035133627, guid: d5af56f4c3f3d924d8f0e5456ee4d55e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3661192846573073941}

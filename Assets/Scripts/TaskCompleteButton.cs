@@ -8,6 +8,7 @@ public class TaskCompleteButton : MonoBehaviour
     private LayerMask taskCompleteButtonLayer;
     public delegate void ExecuteEventHandler();
     public event ExecuteEventHandler OnExecute;
+    private bool executed = false;
 
     void Start()
     {
@@ -41,7 +42,11 @@ public class TaskCompleteButton : MonoBehaviour
 
     private void onTouch()
     {
-        OnExecute.Invoke();
-        GameObject.Destroy(gameObject);
+        if (!executed) {
+            executed = true;
+            Debug.Log("HEY I HAVE BEEN TOUCHED");
+            OnExecute.Invoke();
+            GameObject.Destroy(gameObject);
+        }
     }
 }

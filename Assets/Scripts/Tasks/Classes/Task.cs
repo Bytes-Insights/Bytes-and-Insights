@@ -37,6 +37,8 @@ public class Task
 
     public bool checkSubtasks(){
         bool result = true;
+        Debug.Log("TASK EVALUATION");
+        Debug.Log(_subtasks.Length);
         foreach(Subtask subtask in _subtasks){
             if(!subtask.checkConditions()){
                 result=false;

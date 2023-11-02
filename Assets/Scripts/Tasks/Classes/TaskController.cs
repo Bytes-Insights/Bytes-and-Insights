@@ -139,9 +139,8 @@ public class TaskController : MonoBehaviour
     void Update()
     {
         if(_currentTask < _tasks.Count){
-            if (stopcheck==false) {
-                checkTask();
-            } //else {
+            checkTask();
+            //else {
 
             /*switch(_currentTask){           //switch to select with button to enable
                 case 0:
@@ -175,7 +174,7 @@ public class TaskController : MonoBehaviour
         _tasks[_currentTask].getGameObject().SetActive(false);
         //Increment task
         _currentTask++;
-        
+        Debug.Log(_currentTask);
         if(_currentTask >= _tasks.Count){
             textMeshPro.text = "Explore the world!";
             return;
@@ -202,25 +201,29 @@ public class TaskController : MonoBehaviour
 
     private void checkTask(){
         if(_tasks[_currentTask].checkSubtasks()){
-            stopcheck=true;
-
             if (_currentTask == 0) {
-                _completeButton1.gameObject.SetActive(true);
-                _completeButton1.OnExecute += OnTaskCompleted;
+                if (!_completeButton1.gameObject.activeSelf) {
+                    _completeButton1.gameObject.SetActive(true);
+                    _completeButton1.OnExecute += OnTaskCompleted;
+                }
             }
 
 
 
             if (_currentTask == 1) {
-                _completeButton2.gameObject.SetActive(true);
-                _completeButton2.OnExecute += OnTaskCompleted;
+                if (!_completeButton1.gameObject.activeSelf) {
+                    _completeButton2.gameObject.SetActive(true);
+                    _completeButton2.OnExecute += OnTaskCompleted;
+                }
             }
 
 
 
-            if (_currentTask == 3) {
-                _completeButton3.gameObject.SetActive(true);
-                _completeButton3.OnExecute += OnTaskCompleted;
+            if (_currentTask == 2) {
+                if (!_completeButton1.gameObject.activeSelf) {
+                    _completeButton3.gameObject.SetActive(true);
+                    _completeButton3.OnExecute += OnTaskCompleted;
+                }
             }
             //OnTaskCompleted();
         }

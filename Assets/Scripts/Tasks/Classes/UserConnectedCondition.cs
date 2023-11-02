@@ -11,13 +11,14 @@ public class UserConnectedCondition : SubtaskCondition
     override public bool checkCondition()
     {
         GameObject[] sites = GameObject.FindGameObjectsWithTag("Site_Controller");
-
+        Debug.Log("Called");
         foreach (GameObject obj in sites)
         {
             Site controller = obj.GetComponent<Site>();
-            Debug.Log(controller);
+            
             if (controller && controller.AreUsersConnected())
             {
+                Debug.Log("YESSSS!!");
                 isCompleted = true;
                 break;
             }
