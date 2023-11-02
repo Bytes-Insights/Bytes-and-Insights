@@ -17,15 +17,20 @@ public class TaskController : MonoBehaviour
     public GameObject _task2;
     public GameObject _task3;
     private GameObject subtaskContainer;
-
     public GameObject _chibi1;
     public GameObject _chibi2;
     public GameObject _chibi3;
     public GameObject _chibi4;
     public GameObject _chibi5;
 
+    public GameObject _completebutton1;
+    public GameObject _completebutton2;
+    public GameObject _completebutton3;
+
     public SplineMovement _helicopterSpline;
     public User _helicopterUser;
+   
+    private bool stopcheck = false;
 
     void Start(){
 
@@ -126,7 +131,28 @@ public class TaskController : MonoBehaviour
     void Update()
     {
         if(_currentTask < _tasks.Count){
-            checkTask();
+            if(stopcheck==false){
+            checkTask();}
+            else{
+
+            /*switch(_currentTask){           //switch to select with button to enable
+                case 0:
+                _completebutton1.gameObject.SetActive(true);
+                //I dont know how to subscribe to the event in he other class
+                break;
+
+                case 1:
+                _completebutton2.gameObject.SetActive(true);
+                //I dont know how to subscribe to the event in he other class
+                break;
+
+                case 2;
+                _completebutton3.gameObject.SetActive(true);
+                //I dont know how to subscribe to the event in he other class
+                break
+            }*/
+
+            }
         }
     }
     
@@ -164,7 +190,8 @@ public class TaskController : MonoBehaviour
 
     private void checkTask(){
         if(_tasks[_currentTask].checkSubtasks()){
-            OnTaskCompleted();
+            stopcheck=true;
+            //OnTaskCompleted();
         }
     }
 }
