@@ -23,9 +23,9 @@ public class TaskController : MonoBehaviour
     public GameObject _chibi4;
     public GameObject _chibi5;
 
-    public GameObject _completebutton1;
-    public GameObject _completebutton2;
-    public GameObject _completebutton3;
+    public TaskCompleteButton _completeButton1;
+    public TaskCompleteButton _completeButton2;
+    public TaskCompleteButton _completeButton3;
 
     public SplineMovement _helicopterSpline;
     public User _helicopterUser;
@@ -126,14 +126,19 @@ public class TaskController : MonoBehaviour
         _tasks[_currentTask].getGameObject().SetActive(true);
         textMeshPro = _billboard.GetComponent<TextMeshPro>();
         textMeshPro.text = _tasks[_currentTask].getDescription();
+
+
+        _completeButton1.gameObject.SetActive(false);
+        _completeButton2.gameObject.SetActive(false);
+        _completeButton3.gameObject.SetActive(false);
     }
 
     void Update()
     {
         if(_currentTask < _tasks.Count){
-            if(stopcheck==false){
-            checkTask();}
-            else{
+            if (stopcheck==false) {
+                checkTask();
+            } else {
 
             /*switch(_currentTask){           //switch to select with button to enable
                 case 0:
@@ -158,6 +163,10 @@ public class TaskController : MonoBehaviour
     
     void OnTaskCompleted(){
         Debug.Log("Completed");
+
+        _completeButton1.gameObject.SetActive(false);
+        _completeButton2.gameObject.SetActive(false);
+        _completeButton3.gameObject.SetActive(false);
 
         //Deactivate task
         _tasks[_currentTask].getGameObject().SetActive(false);
@@ -191,6 +200,25 @@ public class TaskController : MonoBehaviour
     private void checkTask(){
         if(_tasks[_currentTask].checkSubtasks()){
             stopcheck=true;
+
+            if (_currentTask == 0) {
+                _completeButton1.gameObject.SetActive(true);
+                _completeButton1.OnExecute += OnTaskCompleted;
+            }
+
+
+
+            if (_currentTask == 1) {
+                _completeButton2.gameObject.SetActive(true);
+                _completeButton2.OnExecute += OnTaskCompleted;
+            }
+
+
+
+            if (_currentTask == 3) {
+                _completeButton3.gameObject.SetActive(true);
+                _completeButton3.OnExecute += OnTaskCompleted;
+            }
             //OnTaskCompleted();
         }
     }

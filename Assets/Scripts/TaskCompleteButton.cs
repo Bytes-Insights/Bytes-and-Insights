@@ -6,18 +6,9 @@ using UnityEngine;
 public class TaskCompleteButton : MonoBehaviour
 {
     private LayerMask taskCompleteButtonLayer;
-   /* public delegate string OnButtonPressDel();          //event code
+    public delegate void ExecuteEventHandler();
+    public event ExecuteEventHandler OnExecute;
 
-      event OnButtonPressDel OnButtonPressEvent;
-		
-      public TaskCompleteButton() {                     
-         this.OnButtonPressEvent += new OnButtonPressDel(this.ButtonPress);
-      }
-      public void string ButtonPress() {
-        GameObject.Destroy(gameObject);     //for test purposes it still destroys the button
-      }
-*/
-   
     void Start()
     {
         //Initialization of private variables
@@ -50,6 +41,7 @@ public class TaskCompleteButton : MonoBehaviour
 
     private void onTouch()
     {
+        OnExecute.Invoke();
         GameObject.Destroy(gameObject);
     }
 }
