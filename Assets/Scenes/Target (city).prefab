@@ -79,7 +79,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d9bd66b37d1ae41975aa6a1d739d01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTarget: 0
   imageTarget: {fileID: 5885232030009357281}
+  user_load: 1000
+  user_priority: 5
+  emoji_happy: {fileID: 0}
+  emoji_sad: {fileID: 0}
 --- !u!114 &7029708918449606460
 MonoBehaviour:
   m_ObjectHideFlags: 0

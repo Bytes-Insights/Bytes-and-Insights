@@ -1,55 +1,42 @@
-using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class OnCollision : MonoBehaviour
+public class coll : MonoBehaviour
 {
     public GameObject building;
-    private Color colour;
-	private Color oldColor;
-	private Color newColor;
-	private Material currentMat;
-    private float opacity;
-    private float factor;
+    private Material currentMat;
     private bool colliding;
 
     void Start()
     {
         colliding = false;
-        colour = building.GetComponent<MeshRenderer>().material.color;
-		currentMat = gameObject.GetComponent<Renderer>().material;
-        //Debug.Log("Building identified");
-        opacity = colour.a;
+        currentMat = gameObject.GetComponent<Renderer>().material;
     }
 
     void Update()
     {
         if (colliding)
         {
-            factor = 0;
-            oldColor = currentMat .color;
-        	newColor = new Color(oldColor.r, oldColor.g, oldColor.b, factor);
-        	currentMat .SetColor("_Color", newColor);
-            //Debug.Log("Decrease opacity");
+            // Decrease opacity when colliding
+            float currentOpacity = currentMat.GetFloat("_Opacity");
+            currentMat.SetFloat("_Opacity", 0f);
         }
         else
         {
-            factor = 1;
-            oldColor = currentMat .color;
-        	newColor = new Color(oldColor.r, oldColor.g, oldColor.b, factor);
-        	currentMat .SetColor("_Color", newColor);
-            //Debug.Log("Increase opacity");
+            // Increase opacity when not colliding
+            float currentOpacity = currentMat.GetFloat("_Opacity");
+            currentMat.SetFloat("_Opacity", 1.0f);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         colliding = true;
-        //Debug.Log("Collided");
     }
 
     private void OnTriggerExit(Collider other)
     {
         colliding = false;
-        //Debug.Log("Separated");
     }
 }
