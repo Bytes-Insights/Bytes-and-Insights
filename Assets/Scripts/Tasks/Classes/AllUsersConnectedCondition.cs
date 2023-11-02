@@ -4,28 +4,25 @@ using UnityEngine;
 
 public class AllUsersConnectedCondition : SubtaskCondition
 {
-    User[] users;
+    private GameObject[] users;
 
-    public AllUsersConnectedCondition(Subtask s, GameObject users){
+    public AllUsersConnectedCondition(Subtask s, GameObject[] objects){
         subtask = s;
-        this.users = users.
+        users = objects;
     }
+
+
 
     override public bool checkCondition()
     {
-        GameObject[] sites = GameObject.FindGameObjectsWithTag("Site_Controller");
-
-        foreach (GameObject obj in sites)
+        bool result = true;
+        foreach (GameObject user in users)
         {
-            Site controller = obj.GetComponent<Site>();
-            Debug.Log(controller);
-            if (controller && controller.AreUsersConnected())
-            {
-                isCompleted = true;
+            if(!user.GetComponent<User>().getConnected()){
+                result = false;
                 break;
             }
         }
-
-        return isCompleted;
+        return result;
     }
 }

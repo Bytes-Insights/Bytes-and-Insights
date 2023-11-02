@@ -18,6 +18,12 @@ public class TaskController : MonoBehaviour
     public GameObject _task3;
     private GameObject subtaskContainer;
 
+    public GameObject _chibi1;
+    public GameObject _chibi2;
+    public GameObject _chibi3;
+    public GameObject _chibi4;
+    public GameObject _chibi5;
+
     public SplineMovement _helicopterSpline;
     public User _helicopterUser;
 
@@ -75,14 +81,8 @@ public class TaskController : MonoBehaviour
         _tasks.Add(task1);
         //task1.OnComplete += OnTaskCompleted;
         _task1.SetActive(false);
-        */
-        Debug.Log("HEY");
-        GameObject button = GameObject.FindGameObjectsWithTag("Button_Connection")[0];
-        Debug.Log("HEY");
-        ConnectivityLayerController controller = button.GetComponent<ConnectivityLayerController>();
-        Debug.Log("HEY");
-        controller.makeConnectionButtonAvailable();
-        Debug.Log("HEY");
+        
+        
 
         //Task 2
         string subtask2_1_description = "Don't let the helicopter disconnect from the internet";
@@ -97,11 +97,17 @@ public class TaskController : MonoBehaviour
         _tasks.Add(task2);
         //task2.OnComplete += OnTaskCompleted;
         _task2.SetActive(false);
+*/
+
+        GameObject button = GameObject.FindGameObjectsWithTag("Button_Connection")[0];
+        ConnectivityLayerController controller = button.GetComponent<ConnectivityLayerController>();
+        controller.makeConnectionButtonAvailable();
 
         //Task 3
+        GameObject[] _task3Chibis = {_chibi1, _chibi2, _chibi3, _chibi4, _chibi5};
         string subtask3_1_description = "Provide internet to everyone";
         Subtask task3_subtask1 = new Subtask(subtask3_1_description);
-        AllUsersConnectedCondition task3_subtask1_condition1 = new AllUsersConnectedCondition(task3_subtask1, _task3);
+        AllUsersConnectedCondition task3_subtask1_condition1 = new AllUsersConnectedCondition(task3_subtask1, _task3Chibis);
         SubtaskCondition[] task3_subtask1_conditions = {task3_subtask1_condition1};
         task3_subtask1.setConditions(task3_subtask1_conditions);
 

@@ -196,6 +196,10 @@ public class User : Observer
         return user_load;
     }
 
+    public bool getConnected(){
+        return is_connected;
+    }
+
     private void ActivateColorShift(bool activate)
     {
         foreach (var renderer in renderers)
