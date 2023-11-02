@@ -99,13 +99,13 @@ public class TaskController : MonoBehaviour
         _task2.SetActive(false);
 
         //Task 3
-        string subtask3_1_description = "Give internet to guy number 1";
-        string subtask3_2_description = "Give internet to guy number 2";
-        string subtask3_3_description = "Give internet to guy number 3";
+        string subtask3_1_description = "Provide internet to everyone";
         Subtask task3_subtask1 = new Subtask(subtask3_1_description);
-        Subtask task3_subtask2 = new Subtask(subtask3_2_description);
-        Subtask task3_subtask3 = new Subtask(subtask3_3_description);
-        Subtask[] task3_subtasks = {task3_subtask1, task3_subtask2, task3_subtask3};
+        AllUsersConnectedCondition task3_subtask1_condition1 = new AllUsersConnectedCondition(task3_subtask1, _task3);
+        SubtaskCondition[] task3_subtask1_conditions = {task3_subtask1_condition1};
+        task3_subtask1.setConditions(task3_subtask1_conditions);
+
+        Subtask[] task3_subtasks = {task3_subtask1};
         string task3_description = "Give internet everyone in the park!";
         Task task3 = new Task(task3_description, task3_subtasks, _task3);
         _tasks.Add(task3);
@@ -119,17 +119,23 @@ public class TaskController : MonoBehaviour
 
     void Update()
     {
-        checkTask();
+        if(_currentTask < _tasks.Count){
+            checkTask();
+        }
     }
     
     void OnTaskCompleted(){
         Debug.Log("Completed");
 
-        //Increment task
-        _currentTask++;
-        Debug.Log(_tasks[_currentTask].getDescription());
         //Deactivate task
         _tasks[_currentTask-1].getGameObject().SetActive(false);
+        //Increment task
+        _currentTask++;
+        
+        if(_tasks[_currentTask] == null){
+            textMeshPro.text = "Explore the world!";
+            return;
+        }
 
         //Show task description in billboard
         textMeshPro.text = _tasks[_currentTask].getDescription();
