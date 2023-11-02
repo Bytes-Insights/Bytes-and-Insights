@@ -134,11 +134,11 @@ public class TaskController : MonoBehaviour
         Debug.Log("Completed");
 
         //Deactivate task
-        _tasks[_currentTask-1].getGameObject().SetActive(false);
+        _tasks[_currentTask].getGameObject().SetActive(false);
         //Increment task
         _currentTask++;
         
-        if(_tasks[_currentTask] == null){
+        if(_currentTask >= _tasks.Count){
             textMeshPro.text = "Explore the world!";
             return;
         }
