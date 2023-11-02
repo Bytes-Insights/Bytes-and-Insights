@@ -63,6 +63,12 @@ public class User : Observer
         }
     }
 
+    void OnDestroy(){
+        if(site_connection != null){
+            site_connection.disconnect(transform.gameObject);
+        }
+    }
+
     void OnTargetStatusChanged(ObserverBehaviour observerbehavour, TargetStatus status)
     {
         if ((status.Status == Status.TRACKED) && status.StatusInfo == StatusInfo.NORMAL)

@@ -26,6 +26,11 @@ public class ConnectivityLayerController : Subject
         }
     }
 
+    public void relist(){
+        RemoveObservers();
+        StoreObserversWithTag("User");
+    }
+
     public void makeConnectionButtonAvailable(){
         Vbi.setAvailable();
     }

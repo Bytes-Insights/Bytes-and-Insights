@@ -26,6 +26,10 @@ public class Range : Observer
 
         //Create sphere of range given the range, opacity and material selected
         sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+        SphereCollider collider = sphere.GetComponent<SphereCollider>();
+        if (collider != null) {
+            Destroy(collider);
+        }
         sphere.transform.parent = target_transform;
         sphere.transform.position = target_transform.position;
         //Apparently, localScale scales an object based on the parent object. Can't add the ranges as children because then we lose track of scale units (A 4.0f for an antenna is not the same for its range)

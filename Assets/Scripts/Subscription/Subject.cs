@@ -25,6 +25,11 @@ public abstract class Subject : MonoBehaviour
         if (gameObject.GetComponent<Observer>() != null)
             _observers.Remove(gameObject.GetComponent<Observer>());
     }
+
+    protected void RemoveObservers(){
+        foreach(Observer observer in _observers)
+            _observers.Remove(observer);
+    }
     
     protected void NotifyObserver(bool isActive)
     {

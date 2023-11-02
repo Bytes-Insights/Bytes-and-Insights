@@ -55,7 +55,6 @@ public class TaskController : MonoBehaviour
         _task0a.SetActive(false);*/
         
         //Task 0b
-        /*
         string subtask0b_1_description = "Scan a target";
         Subtask task0b_subtask1 = new Subtask(subtask0b_1_description);
         SiteScannedCondition subtask0b_1_condition1 = new SiteScannedCondition(task0b_subtask1);
@@ -87,10 +86,7 @@ public class TaskController : MonoBehaviour
         _tasks.Add(task1);
         //task1.OnComplete += OnTaskCompleted;
         _task1.SetActive(false);
-        */
-        GameObject button = GameObject.FindGameObjectsWithTag("Button_Connection")[0];
-        ConnectivityLayerController controller = button.GetComponent<ConnectivityLayerController>();
-        controller.makeConnectionButtonAvailable();
+
         //Task 2
         string subtask2_1_description = "Don't let the helicopter disconnect from the internet";
         Subtask task2_subtask1 = new Subtask(subtask2_1_description);
@@ -104,7 +100,7 @@ public class TaskController : MonoBehaviour
         _tasks.Add(task2);
         //task2.OnComplete += OnTaskCompleted;
         _task2.SetActive(false);
-
+        
         //Task 3
         GameObject[] _task3Chibis = {_chibi1, _chibi2, _chibi3, _chibi4, _chibi5};
         string subtask3_1_description = "Provide internet to everyone";
@@ -183,6 +179,7 @@ public class TaskController : MonoBehaviour
         //Activate new task
         _tasks[_currentTask].getGameObject().SetActive(true);
 
+
         if(_currentTask > 0){
             GameObject button = GameObject.FindGameObjectsWithTag("Button_Ranges")[0];
             RangeLayerController controller = button.GetComponent<RangeLayerController>();
@@ -194,6 +191,10 @@ public class TaskController : MonoBehaviour
             ConnectivityLayerController controller = button.GetComponent<ConnectivityLayerController>();
             controller.makeConnectionButtonAvailable();
         }
+
+        GameObject buttonConnect = GameObject.FindGameObjectsWithTag("Button_Connection")[0];
+        ConnectivityLayerController controllerConn = buttonConnect.GetComponent<ConnectivityLayerController>();
+        controllerConn.relist();
     }
 
     private void checkTask(){
