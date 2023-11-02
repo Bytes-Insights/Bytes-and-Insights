@@ -34,11 +34,12 @@ public class User : Observer
     public Sprite emoji_sad;
 
     RangeLayerController rangeLayer;
+    ConnectivityLayerController connectivityLayer;
 
     void Start()
     {
         rangeLayer = GameObject.FindGameObjectsWithTag("Button_Ranges")[0].GetComponent<RangeLayerController>();
-
+        connectivityLayer = GameObject.FindGameObjectsWithTag("Button_Connection")[0].GetComponent<ConnectivityLayerController>();
         //Find child GameObject user emoji & deactivate
         userEmoji = transform.Find("UserEmoji").gameObject.GetComponent<SpriteRenderer>();
 
@@ -146,7 +147,7 @@ public class User : Observer
             Debug.Log(range_enabled);
             Debug.Log(connectivity_enabled);
         }
-        if (eligibleTarget != null && (rangeLayer.getIsActive() || connectivity_enabled))
+        if (eligibleTarget != null && (rangeLayer.getIsActive() || connectivityLayer.getIsActive()))
         {
             //Connect to new target
             if(eligibleTarget != site_connection){
@@ -217,6 +218,7 @@ public class User : Observer
 
     private void ActivateColorShift(bool activate)
     {
+        Debug.Log(transform.parent.gameObject.name);
         foreach (var renderer in renderers)
         {
             Material[] materials = renderer.materials;

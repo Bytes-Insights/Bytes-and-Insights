@@ -21,6 +21,7 @@ public class ConnectivityLayerController : Subject
         if(caller == "VirtualButtonInteractionConnectivity"){
             Debug.Log(caller);
             isActive = !isActive;
+            Vbi.toggleButton(isActive);
             NotifyObserver(isActive);
         }
     }
