@@ -53,8 +53,9 @@ public class TaskController : MonoBehaviour
         _tasks.Add(task0a);
         task0a.OnComplete += OnTaskCompleted;
         _task0a.SetActive(false);*/
-        /*
+        
         //Task 0b
+        
         string subtask0b_1_description = "Scan a target";
         Subtask task0b_subtask1 = new Subtask(subtask0b_1_description);
         SiteScannedCondition subtask0b_1_condition1 = new SiteScannedCondition(task0b_subtask1);
@@ -66,6 +67,10 @@ public class TaskController : MonoBehaviour
         _tasks.Add(task0b);
         //task0b.OnComplete += OnTaskCompleted;
         _task0b.SetActive(false);
+
+        GameObject button = GameObject.FindGameObjectsWithTag("Button_Ranges")[0];
+        RangeLayerController controller = button.GetComponent<RangeLayerController>();
+        controller.makeRangeButtonAvailable();
 
         //Task 1
         string subtask1_1_description = "Activate coverage layer";
@@ -86,8 +91,6 @@ public class TaskController : MonoBehaviour
         _tasks.Add(task1);
         //task1.OnComplete += OnTaskCompleted;
         _task1.SetActive(false);
-        
-        
 
         //Task 2
         string subtask2_1_description = "Don't let the helicopter disconnect from the internet";
@@ -102,11 +105,11 @@ public class TaskController : MonoBehaviour
         _tasks.Add(task2);
         //task2.OnComplete += OnTaskCompleted;
         _task2.SetActive(false);
-*/
 
-        GameObject button = GameObject.FindGameObjectsWithTag("Button_Connection")[0];
-        ConnectivityLayerController controller = button.GetComponent<ConnectivityLayerController>();
-        controller.makeConnectionButtonAvailable();
+
+        GameObject button2 = GameObject.FindGameObjectsWithTag("Button_Connection")[0];
+        ConnectivityLayerController controller2 = button2.GetComponent<ConnectivityLayerController>();
+        controller2.makeConnectionButtonAvailable();
 
         //Task 3
         GameObject[] _task3Chibis = {_chibi1, _chibi2, _chibi3, _chibi4, _chibi5};
@@ -138,7 +141,7 @@ public class TaskController : MonoBehaviour
         if(_currentTask < _tasks.Count){
             if (stopcheck==false) {
                 checkTask();
-            } else {
+            } //else {
 
             /*switch(_currentTask){           //switch to select with button to enable
                 case 0:
@@ -157,7 +160,7 @@ public class TaskController : MonoBehaviour
                 break
             }*/
 
-            }
+            //}
         }
     }
     

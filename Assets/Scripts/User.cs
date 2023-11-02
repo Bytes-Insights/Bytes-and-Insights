@@ -15,6 +15,7 @@ public class User : Observer
     public bool isTarget;
     public Vuforia.ImageTargetBehaviour imageTarget;
     private bool tracked = false;
+    public ImageTracker replacementTracker;
 
     //Layers
     private bool range_enabled = false;
@@ -32,8 +33,12 @@ public class User : Observer
     public Sprite emoji_happy;
     public Sprite emoji_sad;
 
-    void Awake()
+    RangeLayerController rangeLayer;
+
+    void Start()
     {
+        rangeLayer = GameObject.FindGameObjectsWithTag("Button_Ranges")[0].GetComponent<RangeLayerController>();
+
         //Find child GameObject user emoji & deactivate
         userEmoji = transform.Find("UserEmoji").gameObject.GetComponent<SpriteRenderer>();
 
@@ -81,11 +86,13 @@ public class User : Observer
 
     void Update()
     {
-        if (!tracked)
+        if (!IsTracked())
         {
+            Debug.Log("Not tracked.");
             this.renderer.enabled = false;
             return;
         }
+        Debug.Log("User tracked.");
 
         Site eligibleTarget = null;
         Transform eligibleTargetTransform = null;
@@ -96,6 +103,7 @@ public class User : Observer
             Site site = potentialTarget.GetComponent<Site>();
 
             if (!site.IsTracked()) continue;
+            Debug.Log("Got a tracked site.");
 
             //float usrMaxRange = range.range;
             float siteMaxRange = site.GetRange().range;
@@ -108,11 +116,13 @@ public class User : Observer
 
             if (dist > requiredRange) continue;
 
+            Debug.Log("Range is okay");
+
             if (eligibleTarget == null ||
                 eligibleTarget.networkVersion < site.networkVersion ||
                 (eligibleTarget.networkVersion == site.networkVersion && dist < lastDist))
             {
-
+                Debug.Log("Updating");
                 eligibleTarget = site;
                 eligibleTargetTransform = targetTransform;
                 lastDist = dist;
@@ -131,7 +141,12 @@ public class User : Observer
         }
 
         //Try connecting to new site
-        if (eligibleTarget != null && (range_enabled || connectivity_enabled))
+        if(eligibleTarget !=null){
+            Debug.Log("SOME OTHER TEXT TO RECOGNISE IT");
+            Debug.Log(range_enabled);
+            Debug.Log(connectivity_enabled);
+        }
+        if (eligibleTarget != null && (rangeLayer.getIsActive() || connectivity_enabled))
         {
             //Connect to new target
             if(eligibleTarget != site_connection){
@@ -221,6 +236,13 @@ public class User : Observer
                  materials[i].SetInt("_IsConnected", red ? 1 : 0);
             }
         }
+    }
+
+    bool IsTracked() {
+        if (replacementTracker != null) {
+            return replacementTracker.IsTracked();
+        }
+        return tracked;
     }
 
     MeshRenderer[] GetRenderersRecursively(Transform parent)

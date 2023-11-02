@@ -81,6 +81,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTarget: 0
   imageTarget: {fileID: 5885232030009357281}
+  replacementTracker: {fileID: 0}
   user_load: 1000
   user_priority: 5
   emoji_happy: {fileID: 0}
@@ -1029,6 +1030,7 @@ GameObject:
   - component: {fileID: 5885232030009357281}
   - component: {fileID: 3749294625408603228}
   - component: {fileID: 6053257358155052644}
+  - component: {fileID: 2310983243833724095}
   m_Layer: 0
   m_Name: Target (city)
   m_TagString: Untagged
@@ -1156,6 +1158,19 @@ MonoBehaviour:
   mCastedBehaviour: {fileID: 5885232030009357281}
   mMeshFilter: {fileID: 0}
   mMeshRenderer: {fileID: 0}
+--- !u!114 &2310983243833724095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6949731969203344238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4cbe0279ec1b664391295231448baff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageTarget: {fileID: 5885232030009357281}
 --- !u!1 &8386685841827456838
 GameObject:
   m_ObjectHideFlags: 0
