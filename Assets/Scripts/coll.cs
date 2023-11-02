@@ -20,13 +20,13 @@ public class coll : MonoBehaviour
         {
             // Decrease opacity when colliding
             float currentOpacity = currentMat.GetFloat("_Opacity");
-            currentMat.SetFloat("_Opacity", currentOpacity - 1.0f);
+            currentMat.SetFloat("_Opacity", 0f);
         }
         else
         {
             // Increase opacity when not colliding
             float currentOpacity = currentMat.GetFloat("_Opacity");
-            currentMat.SetFloat("_Opacity", currentOpacity + 1.0f);
+            currentMat.SetFloat("_Opacity", 1.0f);
         }
     }
 
