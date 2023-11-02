@@ -42,6 +42,8 @@ public class Site : Subject
             imageTarget.OnTargetStatusChanged += OnTargetStatusChanged;
         }
 
+        transform.Find("Capacity").gameObject.GetComponent<TextMeshPro>().enabled = false;
+
         //Material Renderers from parent (User's Target GameObject)
         renderers = GetRenderersRecursively(transform.parent);
     }
@@ -51,9 +53,11 @@ public class Site : Subject
         if ((status.Status == Status.TRACKED) && status.StatusInfo == StatusInfo.NORMAL)
         {
             tracked = true;
+            transform.Find("Capacity").gameObject.GetComponent<TextMeshPro>().enabled = true;
         } else
         {
             tracked = false;
+            transform.Find("Capacity").gameObject.GetComponent<TextMeshPro>().enabled = false;
         }
     }
 
